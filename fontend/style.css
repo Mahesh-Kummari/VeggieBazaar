@@ -74,9 +74,6 @@
 }
 .w-heading{
     font-size: 2rem;
-    backdrop-filter: blur(8px);
-    /* -webkit-backdrop-filter: blur(10px); */
-    /* padding: 5px; */
     color: black;
 }
 .w-para{
