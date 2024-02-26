@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Poppins", Arial, sans-serif, system-ui,  'Arial Narrow', Arial, sans-serif;
 }
 .bg-card{
     min-height: 100vh;
@@ -11,13 +15,14 @@
 
 .header{
     height: 70px;
-    /* 
     width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; */
     background-color: #fff;
-    color: whitesmoke;
+
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    margin-bottom: 70px;
 }
 .nav-bar{
     display:  flex;
@@ -36,7 +41,7 @@
 .logo{
     color: #82ae46 !important;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 700;
     word-spacing: 0cm;
     letter-spacing: 0.05cm;
     font-family:  'Arial Narrow', Arial, sans-serif;    
@@ -61,27 +66,72 @@
 
 
 .welcome-section{
-    background-image: url("./resources/fruits-bg-image.jpg");
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
+    background-image: url("./resources/fruits-and-vegetables-boxes.jpg");
+    /* background-repeat: no-repeat;  */
+    background-position: center;
+    background-size: cover;
     min-height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: whitesmoke;
-    /* backdrop-filter: blur(4px); */
 }
-.w-heading{
-    font-size: 2rem;
-    color: black;
+.w-heading, .w-para{
+    color: white;
+    font-size: 3rem;
+    /* background-color: rgb(25, 77, 77); */
+    -webkit-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    filter: blur(0px);
+    padding: 18px 25px;
+    border-radius: 8px;
 }
 .w-para{
-    margin: 5px;
+    margin: 15px;
     font-size: 1.5rem;
+    padding: 10px 20px;
 }
 .w-para>span{
-    color: rgb(131, 6, 240);
+    color: rgb(148, 236, 8);
     font-weight: 600;
     /* background-color: rgb(41, 45, 39); */
+}
+
+
+
+.highlights{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin: 30px 100px;
+}
+.h-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    border: 8px solid #ad567f;
+    border-radius: 50%;
+    padding: 20px;
+    background-color: white;
+    width: 120px;
+    margin-bottom: 12px;
+}
+.fresh{
+    padding: 15px;
+}
+.h-card>.tagline{
+    font-weight: 600;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+
+
+.categories{
+    margin: 20px;
 }
