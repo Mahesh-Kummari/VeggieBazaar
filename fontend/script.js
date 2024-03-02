@@ -26,29 +26,44 @@ menuBtn.addEventListener("click", ()=>{
 });
 
 // testimonials starts -------------------------------------->
+
+// const testimonialContainer = document.querySelector('.testimonials-container');
+
+// // Clone testimonials to create infinite scrolling effect
+// testimonialContainer.innerHTML += testimonialContainer.innerHTML;
+
+// // Scroll testimonials horizontally
+// function scrollTestimonials() {
+//   if (testimonialContainer.scrollLeft >= testimonialContainer.scrollWidth / 2) {
+//     testimonialContainer.scrollLeft = 0;
+//   } else {
+//     testimonialContainer.scrollLeft += 2; // Adjust scroll speed if needed
+//   }
+// }
+
+// // Auto-scroll every 50 milliseconds
+// setInterval(scrollTestimonials, 0);
+
+// testimonials ends -------------------------------------->
 const testimonialContainer = document.querySelector('.testimonial-container');
-const testimonialCards = document.querySelectorAll('.testimonial-card');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
 
 let currentIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const totalTestimonials = testimonials.length;
+const testimonialWidth = testimonials[0].offsetWidth;
 
-function showCard(index) {
-  testimonialContainer.style.transform = `translateX(-${index * 340}px)`; // Adjusted for card width and margin
+function showTestimonial(index) {
+  testimonialContainer.scrollLeft = index * testimonialWidth;
 }
 
 prevBtn.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    showCard(currentIndex);
-  }
+  currentIndex = Math.max(currentIndex - 1, 0);
+  showTestimonial(currentIndex);
 });
 
 nextBtn.addEventListener('click', () => {
-  if (currentIndex < testimonialCards.length - 1) {
-    currentIndex++;
-    showCard(currentIndex);
-  }
+  currentIndex = Math.min(currentIndex + 1, totalTestimonials - 1);
+  showTestimonial(currentIndex);
 });
-
-// testimonials ends -------------------------------------->

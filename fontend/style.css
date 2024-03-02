@@ -413,7 +413,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* overflow-x: hidden; */
+    overflow-x: auto;
+    white-space: nowrap;
     margin: 100px 0px;
     width: 100%;
 }
@@ -428,49 +429,162 @@
     text-align: center;
 }
 
-/* tstimonials */
+
+
+.customer-image{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.testimonials-bg{
+    overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  padding: 50px;
+}
+.testimonials-container{
+    overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonial{
+    display: inline-block;
+  width: 300px; /* Adjust the width of each testimonial */
+  padding: 20px;
+  margin-right: 20px;
+  background-color: #f0f0f0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* testimonials */
 .testimonial-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* overflow-x: unset; */
-    max-width: 100%;
-    /* margin: 10px 50px; */
+    position: relative;
+    overflow-x: hidden;
   }
   
-  .testimonial-card {
+  .testimonials {
+    display: flex;
+    white-space: nowrap;
+  }
+  
+  .testimonial {
     flex: 0 0 auto;
-    width: 300px;
-    padding: 15px;
-    margin: 15px;
+    width: 300px; /* Adjust the width of each testimonial */
+    padding: 20px;
     margin-right: 20px;
     background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
+    text-wrap: wrap;
   }
-  .testimonial-card img {
-    margin-top: 1rem;
-    height: 8rem;
-    width: 8rem;
-    border-radius: 50%;
-    text-align: center;
-  }
-  .testimonials-buttons{
-    margin: 20px 20px;
-  }
-
+  
   button {
-    margin-top: 20px;
-    padding: 10px 15px;
-    font-size: 16px;
-    margin: 5px;
-    border-radius: 5px;
+    /* position: absolute; */
+    /* top: 50%; */
+    transform: translateY(-50%);
+    background-color: transparent;
     border: none;
+    color: white;
+    font-size: 1.2rem;
     cursor: pointer;
   }
-/* testimonials */
+  
+  .prev-btn {
+    left: 10px;
+    position: absolute;
+    
+  }
+  
+  .next-btn {
+    right: 10px;
+    position: absolute;
+  }
+  .prev-btn, .next-btn{
+    color: white;
+    background-color: orange;
+    padding: 5px 10px;
+  }
+  
+/* --------------------------------- */
+.partners{
+    margin: 50px 0px;
+}
+.partners-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-image{
+    height: 70px;
+    width: 150px;
+    margin: 30px;
+}
+
+.subscribe{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 70px;
+    margin: 100px 0px;
+    background-color: #f7f6f2 ;
+}
+.email-button input{
+    padding: 15px 15px;
+    font-size: 14px;
+    margin: 0px;
+    border: none;
+}
+.email-button > [type="button"]{
+    background-color: #82ae46 ;
+    color: white;
+
+}
+.email-button > [type="email"]{
+    width: 400px;
+    border-radius: 3px;
+    /* border: none; */
+}
+.email-button > [type="email"]:focus{
+    border: 2px solid rgba(130, 174, 70, 0.5);
+    outline: none;
+}
+
+.footer-section{
+    margin: 10px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.vegefoods-icons-section{
+    width: 300px;
+}
+.footer-section li{
+    list-style-type: none;
+}
+.footer-section i{
+    padding: 13px;
+    height: 60px;
+    width: 60px;
+    font-size: 32px;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: #e8e8e8;
+}
+.address-card{
+    width: 300px;
+}
+.address-card i{
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    
+}

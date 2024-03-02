@@ -1,246 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/46c135c7b1.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script
+      src="https://kit.fontawesome.com/46c135c7b1.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Veggie Bazaar</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="bg-card">
-        <header class="header" id="header">
-            <nav class="nav-bar">
-                <a href="#" class="logo">VEGGIE BAZAAR</a>
-                <div class="btn-and-categorys">
-                    <button type="button" class="menu-btn" id="button" value="false">
-                        <img  loading="lazy"  class="menu-icon" src="./resources/menu-2.png" alt="menu/close icon" />
-                    </button>
-                    <!-- <input type="radio" name="radio"  id="radio"> -->
-                    
-                    <ul class="ul">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#deals">Shop</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li ><a id="login" href="#">Login</a></li>
-                    </ul>
-                </div>
-                
-            </nav>
-        </header>
-        
-        <div class="all-sections">
-            <section class="welcome-section">
-                <h1 class="w-heading">Hey Hiii!, Welcome to <span>Veggie Bazaar</span>!!!...</h1>
-               <p class="w-para">Please <a href="#">Login</a> to Shop and access the all features. </p>
-            </section>
-            <section class="highlights">
-                <div class="h-card">
-                    <img  loading="lazy" src="./resources/delivery.png" alt="delivery-truck" class="icon"/>
-                    <p class="tagline">FREE SHIPPING</p>
-                    <p class="description">On order over ₹500/-</p>
-                </div>
-                <div class="h-card">
-                    <img  loading="lazy" src="./resources/fresh-4.png" alt="delivery-truck" class="icon fresh"/>
-                    <p>ALWAYS FRESH</p>
-                    <p>Products well packed</p>
-                </div>
-                <div class="h-card">
-                    <img  loading="lazy" src="./resources/award-quality.png" alt="delivery-truck" class="icon"/>
-                    <p>SUPERIOR QUALITY</p>
-                    <p>Quality products</p>
-                </div>
-                <div class="h-card">
-                    <img  loading="lazy" src="./resources/customer-service.png" alt="delivery-truck" class="icon"/>
-                    <p>SUPPORT</p>
-                    <p>24/7 Support</p>
-                </div>
-            </section>
-            <section class="categories">
-                <div class="c-outer">
-                    <div class="c-inner c-fruits">
-                        <img  loading="lazy" class="c-image" src="./resources/fruits-basket.jpg" alt="fruits" >
-                        <p class="c-label">Fruits</p>
-                    </div>
-                    <div class="c-inner c-vegetables">
-                        <img  loading="lazy"  class="c-image" src="./resources/vegetables.jpg" alt="vegetables" >
-                        <p class="c-label">Vegetables</p>
-                    </div>
-                </div>
-                <div class="c-outer text-image-card">
-                    <div class="c-inner c-text">
-                        <h3 class="c-vegetables-text">Vegetables</h3>
-                        <p>Protect the health of every one</p>
-                        <button class="c-shop-now">Shop Now</button>
-                    </div>
-                    <div class="c-inner c-all">
-                        <img  loading="lazy"  class="c-image" src="./resources/all-vegetables.jpg" alt="vegetables" >
-                    </div>
-                </div>
-                <div class="c-outer">
-                    <div class="c-inner c-juices">
-                        <img loading="lazy"   class="c-image" src="./resources/juice.jpg" alt="juices" >
-                        <p class="c-label">Juices</p>
-                    </div>
-                    <div class="c-inner c-cerels">
-                        <img  loading="lazy"  class="c-image" src="./resources/cerels.jpg" alt="cerels" >
-                        <p class="c-label">Dried</p>
-                    </div>
-                </div>
-            </section>
-            <section class="our-products-section">
-                <div class="op-head-para-card">
-                    <p class="c-vegetables-text">Featured Products</p>
-                    <h2 class="op-heading">Our Products</h2>
-                    <p class="op-para-description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                </div>
-                
-                <div class="op-products-container" id="op-products-container" >
-                    <div class="op-product">
-                        <img loading="lazy" class="op-product-image" src="./resources/bell-pepper-capsicum.jpg" alt="">
-                        <p class="op-product-name">BELLI PEPPER</p>
-                        <p class="op-roduct-price"><span>₹120.00</span> ₹80.00</p>
-                        <div class="op-icons-card" >
-                            <p class="op-icon"><i class="fa-solid fa-bars "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-cart-arrow-down "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-heart "></i></p>
-                        </div>
-                    </div>
-                    <div class="op-product">
-                        <img  loading="lazy" class="op-product-image" src="./resources/strawberrys.jpg" alt="">
-                        <p class="op-product-name">STRAWBERRY</p>
-                        <p class="op-roduct-price"><span>₹120.00</span> ₹60.00</p>
-                        <div class="op-icons-card" >
-                            <p class="op-icon"><i class="fa-solid fa-bars "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-cart-arrow-down "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-heart "></i></p>
-                        </div>
-                    </div>
-                    <div class="op-product">
-                        <img  loading="lazy" class="op-product-image" src="./resources/green-beans.jpg" alt="">
-                        <p class="op-product-name">GREEN BEANS</p>
-                        <p class="op-roduct-price"><span>₹90.00</span> ₹50.00</p>
-                        <div class="op-icons-card" >
-                            <p class="op-icon"><i class="fa-solid fa-bars "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-cart-arrow-down "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-heart "></i></p>
-                        </div>
-                    </div>
-                    <div class="op-product">
-                        <img  loading="lazy" class="op-product-image" src="./resources/purple-cabeggie.jpg" alt="">
-                        <p class="op-product-name">PURPLE CABBAGE</p>
-                        <p class="op-roduct-price"><span>₹75.00</span> ₹35.00</p>
-                        <div class="op-icons-card" >
-                            <p class="op-icon"><i class="fa-solid fa-bars "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-cart-arrow-down "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-heart "></i></p>
-                        </div>
-                    </div>
-                    <div class="op-product">
-                        <img loading="lazy"  class="op-product-image" src="./resources/tomotos.jpg" alt="">
-                        <p class="op-product-name">TOMATO</p>
-                        <p class="op-roduct-price"><span>₹80.00</span> ₹40.00</p>
-                        <div class="op-icons-card" >
-                            <p class="op-icon"><i class="fa-solid fa-bars "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-cart-arrow-down "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-heart "></i></p>
-                        </div>
-                    </div>
-                    <div class="op-product">
-                        <img  loading="lazy" class="op-product-image" src="./resources/brocolli.jpg" alt="">
-                        <p class="op-product-name">BROCOLLI</p>
-                        <p class="op-roduct-price"><span>₹85.00</span> ₹40.00</p>
-                        <div class="op-icons-card" >
-                            <p class="op-icon"><i class="fa-solid fa-bars "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-cart-arrow-down "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-heart "></i></p>
-                        </div>
-                    </div>
-                    <div class="op-product">
-                        <img loading="lazy"  class="op-product-image" src="./resources/carret.jpg" alt="">
-                        <p class="op-product-name">CARROTS</p>
-                        <p class="op-roduct-price"><span>₹70.00</span> ₹30.00</p>
-                        <div class="op-icons-card" >
-                            <p class="op-icon"><i class="fa-solid fa-bars "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-cart-arrow-down "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-heart "></i></p>
-                        </div>
-                    </div>
-                    <div class="op-product">
-                        <img  loading="lazy" class="op-product-image" src="./resources/fruit-juice-bottle.jpg" alt="">
-                        <p class="op-product-name">FRUIT JUICE</p>
-                        <p class="op-roduct-price"><span>₹180.00</span> ₹120.00</p>
-                        <div class="op-icons-card" >
-                            <p class="op-icon"><i class="fa-solid fa-bars "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-cart-arrow-down "></i></p>
-                            <p class="op-icon"><i class="fa-solid fa-heart "></i></p>
-                        </div>
-                    </div>
-    
-                </div>
-            </section>
-            <section class="deal-of-the-day-section" id="deals">
-                <div class="deal-div">
-                    <p  class="c-vegetables-text best-price">Best price for you</p>
-                    <h2 class="op-heading deal-head">Deal of the day</h2>
-                    <p  class="op-para-description para">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                    <p  class="c-vegetables-text">Spinach <br/>
-                    <span><span class="price">₹60 </span>now ₹35 only</span></p>
-                    
-                </div>
-            </section>
-    
-            <section class="testimoniels">
-                <div class="t-head-discription">
-                    <p class="c-vegetables-text">Testimony</p>
-                    <h2 class="op-heading">Our satisfied customer says</h2>
-                    <p class="op-para-description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-                </div>
-    
-                <div class="testimonial-container">
-                    <div class="testimonial-card">
-                        <img calss="customer" src="./resources/person_1.jpg.webp" alt="Customer-image" />
-                        <p class="op-para-description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-                        <p>Ramesh</p>
-                        <p>Regular Customer</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <img calss="customer" src="./resources/person_1.jpg.webp" alt="Customer-image" />
-                        <p class="op-para-description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-                        <p>Ramesh</p>
-                        <p>Regular Customer</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <img calss="customer" src="./resources/person_1.jpg.webp" alt="Customer-image" />
-                        <p class="op-para-description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-                        <p>Ramesh</p>
-                        <p>Regular Customer</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <img calss="customer" src="./resources/person_1.jpg.webp" alt="Customer-image" />
-                        <p class="op-para-description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-                        <p>Ramesh</p>
-                        <p>Regular Customer</p>
-                    </div>
-                    
-                  </div>
-                  <div class="testimonials-buttons">
-                    <button id="prevBtn">Previous</button>
-                  <button id="nextBtn">Next</button>
-                  </div>
-                  
-                  
-                  
-                  
-                  
-            </section>
-        </div>
+      <header class="header" id="header">
+        <nav class="nav-bar">
+          <a href="#" class="logo">VEGGIE BAZAAR</a>
+          <div class="btn-and-categorys">
+            <button type="button" class="menu-btn" id="button" value="false">
+              <img
+                loading="lazy"
+                class="menu-icon"
+                src="./resources/menu-2.png"
+                alt="menu/close icon"
+              />
+            </button>
+            <!-- <input type="radio" name="radio"  id="radio"> -->
+
+            <ul class="ul">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#deals">Shop</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a id="login" href="#">Login</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div class="all-sections">
+        <section class="welcome-section">
+          <h1 class="w-heading">
+            Hey Hiii!, Welcome to <span>Veggie Bazaar</span>!!!...
+          </h1>
+          <p class="w-para">
+            Please <a href="#">Login</a> to Shop and access the all features.
+          </p>
+        </section>
+        <section class="highlights">
+          <div class="h-card">
+            <img
+              loading="lazy"
+              src="./resources/delivery.png"
+              alt="delivery-truck"
+              class="icon"
+            />
+            <p class="tagline">FREE SHIPPING</p>
+            <p class="description">On order over ₹500/-</p>
+          </div>
+          <div class="h-card">
+            <img
+              loading="lazy"
+              src="./resources/fresh-4.png"
+              alt="delivery-truck"
+              class="icon fresh"
+            />
+            <p>ALWAYS FRESH</p>
+            <p>Products well packed</p>
+          </div>
+          <div class="h-card">
+            <img
+              loading="lazy"
+              src="./resources/award-quality.png"
+              alt="delivery-truck"
+              class="icon"
+            />
+            <p>SUPERIOR QUALITY</p>
+            <p>Quality products</p>
+          </div>
+          <div class="h-card">
+            <img
+              loading="lazy"
+              src="./resources/customer-service.png"
+              alt="delivery-truck"
+              class="icon"
+            />
+            <p>SUPPORT</p>
+            <p>24/7 Support</p>
+          </div>
+        </section>
+        <section class="categories">
+          <div class="c-outer">
+            <div class="c-inner c-fruits">
+              <img
+                loading="lazy"
+                class="c-image"
+                src="./resources/fruits-basket.jpg"
+                alt="fruits"
+              />
+              <p class="c-label">Fruits</p>
+            </div>
+            <div class="c-inner c-vegetables">
+              <img
+                loading="lazy"
+                class="c-image"
+                src="./resources/vegetables.jpg"
+                alt="vegetables"
+              />
+              <p class="c-label">Vegetables</p>
+            </div>
+          </div>
+          <div class="c-outer text-image-card">
+            <div class="c-inner c-text">
+              <h3 class="c-vegetables-text">Vegetables</h3>
+              <p>Protect the health of every one</p>
+              <button class="c-shop-now">Shop Now</button>
+            </div>
+            <div class="c-inner c-all">
+              <img
+                loading="lazy"
+                class="c-image"
+                src="./resources/all-vegetables.jpg"
+                alt="vegetables"
+              />
+            </div>
+          </div>
+          <div class="c-outer">
+            <div class="c-inner c-juices">
+              <img
+                loading="lazy"
+                class="c-image"
+                src="./resources/juice.jpg"
+                alt="juices"
+              />
+              <p class="c-label">Juices</p>
+            </div>
+            <div class="c-inner c-cerels">
+              <img
+                loading="lazy"
+                class="c-image"
+                src="./resources/cerels.jpg"
+                alt="cerels"
+              />
+              <p class="c-label">Dried</p>
+            </div>
+          </div>
+        </section>
+        <section class="our-products-section">
+          <div class="op-head-para-card">
+            <p class="c-vegetables-text">Featured Products</p>
+            <h2 class="op-heading">Our Products</h2>
+            <p class="op-para-description">
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia
+            </p>
+          </div>
+
+          <div class="op-products-container" id="op-products-container">
+            <div class="op-product">
+              <img
+                loading="lazy"
+                class="op-product-image"
+                src="./resources/bell-pepper-capsicum.jpg"
+                alt=""
+              />
+              <p class="op-product-name">BELLI PEPPER</p>
+              <p class="op-roduct-price"><span>₹120.00</span> ₹80.00</p>
+              <div class="op-icons-card">
+                <p class="op-icon"><i class="fa-solid fa-bars"></i></p>
+                <p class="op-icon">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </p>
+                <p class="op-icon"><i class="fa-solid fa-heart"></i></p>
+              </div>
+            </div>
+            <div class="op-product">
+              <img
+                loading="lazy"
+                class="op-product-image"
+                src="./resources/strawberrys.jpg"
+                alt=""
+              />
+              <p class="op-product-name">STRAWBERRY</p>
+              <p class="op-roduct-price"><span>₹120.00</span> ₹60.00</p>
+              <div class="op-icons-card">
+                <p class="op-icon"><i class="fa-solid fa-bars"></i></p>
+                <p class="op-icon">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </p>
+                <p class="op-icon"><i class="fa-solid fa-heart"></i></p>
+              </div>
+            </div>
+            <div class="op-product">
+              <img
+                loading="lazy"
+                class="op-product-image"
+                src="./resources/green-beans.jpg"
+                alt=""
+              />
+              <p class="op-product-name">GREEN BEANS</p>
+              <p class="op-roduct-price"><span>₹90.00</span> ₹50.00</p>
+              <div class="op-icons-card">
+                <p class="op-icon"><i class="fa-solid fa-bars"></i></p>
+                <p class="op-icon">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </p>
+                <p class="op-icon"><i class="fa-solid fa-heart"></i></p>
+              </div>
+            </div>
+            <div class="op-product">
+              <img
+                loading="lazy"
+                class="op-product-image"
+                src="./resources/purple-cabeggie.jpg"
+                alt=""
+              />
+              <p class="op-product-name">PURPLE CABBAGE</p>
+              <p class="op-roduct-price"><span>₹75.00</span> ₹35.00</p>
+              <div class="op-icons-card">
+                <p class="op-icon"><i class="fa-solid fa-bars"></i></p>
+                <p class="op-icon">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </p>
+                <p class="op-icon"><i class="fa-solid fa-heart"></i></p>
+              </div>
+            </div>
+            <div class="op-product">
+              <img
+                loading="lazy"
+                class="op-product-image"
+                src="./resources/tomotos.jpg"
+                alt=""
+              />
+              <p class="op-product-name">TOMATO</p>
+              <p class="op-roduct-price"><span>₹80.00</span> ₹40.00</p>
+              <div class="op-icons-card">
+                <p class="op-icon"><i class="fa-solid fa-bars"></i></p>
+                <p class="op-icon">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </p>
+                <p class="op-icon"><i class="fa-solid fa-heart"></i></p>
+              </div>
+            </div>
+            <div class="op-product">
+              <img
+                loading="lazy"
+                class="op-product-image"
+                src="./resources/brocolli.jpg"
+                alt=""
+              />
+              <p class="op-product-name">BROCOLLI</p>
+              <p class="op-roduct-price"><span>₹85.00</span> ₹40.00</p>
+              <div class="op-icons-card">
+                <p class="op-icon"><i class="fa-solid fa-bars"></i></p>
+                <p class="op-icon">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </p>
+                <p class="op-icon"><i class="fa-solid fa-heart"></i></p>
+              </div>
+            </div>
+            <div class="op-product">
+              <img
+                loading="lazy"
+                class="op-product-image"
+                src="./resources/carret.jpg"
+                alt=""
+              />
+              <p class="op-product-name">CARROTS</p>
+              <p class="op-roduct-price"><span>₹70.00</span> ₹30.00</p>
+              <div class="op-icons-card">
+                <p class="op-icon"><i class="fa-solid fa-bars"></i></p>
+                <p class="op-icon">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </p>
+                <p class="op-icon"><i class="fa-solid fa-heart"></i></p>
+              </div>
+            </div>
+            <div class="op-product">
+              <img
+                loading="lazy"
+                class="op-product-image"
+                src="./resources/fruit-juice-bottle.jpg"
+                alt=""
+              />
+              <p class="op-product-name">FRUIT JUICE</p>
+              <p class="op-roduct-price"><span>₹180.00</span> ₹120.00</p>
+              <div class="op-icons-card">
+                <p class="op-icon"><i class="fa-solid fa-bars"></i></p>
+                <p class="op-icon">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </p>
+                <p class="op-icon"><i class="fa-solid fa-heart"></i></p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="deal-of-the-day-section" id="deals">
+          <div class="deal-div">
+            <p class="c-vegetables-text best-price">Best price for you</p>
+            <h2 class="op-heading deal-head">Deal of the day</h2>
+            <p class="op-para-description para">
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia
+            </p>
+            <p class="c-vegetables-text">
+              Spinach <br />
+              <span><span class="price">₹60 </span>now ₹35 only</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="testimoniels">
+          <div class="t-head-discription">
+            <p class="c-vegetables-text">Testimony</p>
+            <h2 class="op-heading">Our satisfied customer says</h2>
+            <p class="op-para-description">
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts. Separated
+              they live in
+            </p>
+          </div>
 
         
+            
+        
+          
+        </section> 
+
+
+        <div class="my-test">
+            <div class="testimonial-container">
+                <div class="testimonials">
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <div class="testimonial">
+                    <img class="customer-image" src="./resources/person_1.jpg.webp" alt="customer-image-1">
+                    <p>Far far away, behind the word mountains, 
+                    </p>
+                    <p>Mahesh</p>
+                    <p>Regular customer</p>
+                  </div>
+                  <!-- Add more testimonials as needed -->
+                </div>
+                <button class="prev-btn">Previous</button>
+                <button class="next-btn">Next</button>
+              </div>
+              
+        </div>
+        
+
+        <section class="partners">
+            <div class="partners-bg">
+                <img class="partner-image" src="./resources/partner-1.png.webp" alt="partner image">
+                <img class="partner-image"  src="./resources/partner-2.png.webp" alt="partner image">
+                <img class="partner-image"  src="./resources/partner-3.png.webp" alt="partner image">
+                <img class="partner-image"  src="./resources/partner-4.png.webp" alt="partner image">
+                <img  class="partner-image" src="./resources/partner-5.png.webp" alt="partner image">
+            </div>
+        </section>
+
+        <section class="subscribe">
+            <div class="">
+                <h4>Subscribe to our Newsletter</h4>
+                <p>Get e-mail updates about our latest shops and special offers</p>
+            </div>
+            <div class="email-button">
+                <input type="email" placeholder="Enter email address">
+                <input type="button" value="Subscribe">
+            </div>
+        </section>
+
+        <section class="footer-section">
+            <div class="vegefoods-icons-section">
+                <div class="vegefoods">
+                    <h5>Vegefoods</h5>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                </div>
+                <div class="icons">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+            <div class="menu-card">
+                <p>Menu</p>
+            <ul class="menu">
+                <li>Shop</li>
+                <li>About</li>
+                <li>Journal</li>
+                <li>Contact Us</li>
+            </ul>
+            </div>
+            <div class="help-card">
+                <p>Help</p>
+            <ul class="help">
+                <li>Shipping information</li> 
+                <li>Returns & Exchange</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+            </ul>
+            </div>
+            <div class="address-card">
+                <p>Have a Qustion?</p>
+            <ul class="address">
+                <li><i class="fa-solid fa-location-dot"></i> 203 Fake St. Mountain View, San Francisco, California, USA</li>
+                <li><i class="fa-solid fa-phone"></i> +2 392 3929 210</li>
+                <li><i class="fa-solid fa-envelope"></i> info@yourdomain.com</li>
+            </ul>
+            </div>
+            
+        </section>
+
+      </div>    <!--  this is all sections end -->
+
+      
+      
 
     </div>
-
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
