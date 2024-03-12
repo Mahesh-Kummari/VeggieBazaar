@@ -1,0 +1,33 @@
+GET http://localhost:3000/getProducts
+Content-Type: application/json
+
+###
+GET http://localhost:3000/all
+Content-Type: application/json
+
+###
+GET http://localhost:3000/cart
+Content-Type: application/json
+
+###
+POST http://localhost:3000/addUser
+Content-Type: application/json
+
+{
+    
+}
+###
+POST http://localhost:3000/addProductToCart
+Content-Type: application/json
+
+{
+
+}
+###
+POST http://localhost:3000/getProductsOnUserId
+Content-Type: application/json
+
+{
+    "email" : "mahesh@gmail.com"
+}
+###
