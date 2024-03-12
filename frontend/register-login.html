@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script
+      src="https://kit.fontawesome.com/46c135c7b1.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Veggie Bazaar | Login/Register</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="register-login.css">
+  </head>
+  <body loading="lazy">
+    <header class="header" id="header">
+        <nav class="nav-bar">
+            <a href="index.html" id="logo">VEGGIE BAZAAR</a>
+            <div class="btn-and-categorys">
+                <i id="menu-icon" class="fa-solid fa-bars menu-btn"></i>
+            <ul class="ul">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#ourProducts">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a id="login" href="#">Login</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="register-section" id="registerSection">
+        <form id="registerForm" class="registration-form">
+            <div class="registration-image-container">
+                <img class="registration-image" src="./resources/registration1.jpg" alt="registration-image" onerror="onRegistrationImageError()" loading="lazy">
+            </div>
+            <div class="registration-container">
+                <h2>Register</h2>
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name">
+
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter your email address">
+
+                <label for="password">Password</label>
+                <input type="text" id="password"  placeholder="Enter your password"  />
+
+                <label for="conformPassword">Conform Password</label>
+                <input type="password" id="conformPassword" placeholder="Conform your password">
+                <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
+                
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" placeholder="Enter your mobile number">
+                
+                <button type="submit" id="registerButton">Register</button>
+            </div>
+            
+        </form>
+    </section>
+    <section class="login-section" id="loginSection"></section>
+
+
+    <section class="footer-section">
+        <div class="footer-all-cards">
+          <div class="vegefoods-icons-section">
+            <div class="vegefoods">
+                <h5>Veggie Bazaar</h5>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            </div>
+            <div class="icons">
+                <a href="#" title="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" title="facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="#" title="instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="menu-help-container">
+          <div class="menu-card">
+            <h5>Menu</h5>
+            <ul class="menu">
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Journal</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="help-card">
+            <h5>Help</h5>
+            <ul class="help">
+              <li><a href="#">Shipping information</a></li>
+              <li><a href="#">Returns & Exchange</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        </div>
+        
+        <div class="address-card">
+            <h5>Have a Question?</h5>
+            <ul class="address">
+                <li><i class="fa-solid fa-location-dot"></i> 12-15-1039, Manikeshwari Nagar, Amberpet, Secundrabad, 500007, Telangana, India</li>
+                <li><i class="fa-solid fa-phone"></i><a href="tel:+91 9949767111">+91 9949767111</a></li>
+                <li><i class="fa-solid fa-envelope"></i><a href="mailto:maheshkummari7111@gmail.com">maheshkummari7111@gmail.com</a></li>
+            </ul>
+        </div>
+        </div>
+          <p class="copyright">Copyright ©2024 All rights reserved | This template is made with <span>&#9829; </span>by <a href="#">Mahesh</a></p>
+      </section>
+
+    <script src="register-login.js"></script>
+  </body>
+    
+        

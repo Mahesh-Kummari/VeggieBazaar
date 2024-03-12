@@ -1,0 +1,60 @@
+.register-section{
+    margin-top: 100px;
+}
+.registration-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.registration-image{
+    height: 500px;
+    width: 500px;
+    border-radius: 10px;
+}
+.registration-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.registration-container > h2{
+    text-decoration: underline;
+    color: #82ae46;
+}
+.registration-container > input{
+    padding: 8px 10px;
+    width: 350px;
+    font-size: clamp(12px, 1.5vw, 18px);
+    border-radius: 5px;
+    border: 1px solid #82ae46;
+    outline: none;
+}
+.registration-container > label{
+    margin-top: 15px;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 500;
+}
+.registration-container > i{
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 220px;
+}
+.registration-container > button{
+    padding: 10px;
+    border-radius: 25px;
+    width: 150px;
+    margin: 30px 30px 30px 0;
+    color: white;
+    background-color: black;
+    outline: none;
+    border: none;
+    font-size: clamp(16px, 2vw, 20px);
+}
+.registration-container > button:hover{
+    background-color:  #82ae46;
+}
+.footer-section{
+    margin-top: 100px;
+}
