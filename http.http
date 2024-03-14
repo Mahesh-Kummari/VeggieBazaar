@@ -1,0 +1,73 @@
+GET http://localhost:3000/getProducts
+Content-Type: application/json
+
+###
+GET http://localhost:3000/users
+Content-Type: application/json
+
+###
+GET http://localhost:3000/cart
+Content-Type: application/json
+
+###
+POST http://localhost:3000/addUser
+Content-Type: application/json
+
+{
+   "email": "test1@gmail.com" 
+}
+###
+
+###
+POST http://localhost:3000/addProductToCart
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "product_id":12,
+    "quantity":1
+}
+###
+POST http://localhost:3000/getProductsOnUserId
+Content-Type: application/json
+
+{
+    "email" : "mahesh@gmail.com"
+}
+###
+DELETE http://localhost:3000/deleteUser
+Content-Type: application/json
+
+{
+    "email": "test1@gmail.com"
+}
+###
+PUT http://localhost:3000/updateUser 
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "test1234",
+    "full_name": "testing123",
+    "mobile": "12345123455"
+  }
+###
+DELETE http://localhost:3000/deleteProductFromCart/12&test@gmail.com
+Content-Type: application/json
+
+###
+GET http://localhost:3000/createProductTable
+Content-Type: application/json
+
+###
+GET http://localhost:3000/addCol
+Content-Type: application/json
+
+###
+POST http://localhost:3000/addProductsIntoProductsTable
+Content-Type: application/json
+
+{
+    
+}
+###

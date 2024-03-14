@@ -1,0 +1,739 @@
+{
+    "vegetables": [
+      {
+        "name": "Tomato",
+        "id": 1,
+        "description": "Tomatoes are juicy fruits commonly used as vegetables in cooking. They are rich in lycopene, an antioxidant that has been linked to various health benefits.",
+        "price": 90,
+        "discounted_price": 50,
+        "image": "../images/tomatoes.jpg"
+      },
+      {
+        "name": "Carrot",
+        "id": 2,
+        "description": "Carrots are root vegetables that are rich in beta-carotene, which is converted into vitamin A in the body. They are crunchy and sweet when raw and can be cooked in various dishes.",
+        "price": 60,
+        "discounted_price": 45,
+        "image": "../images/carrots.jpg"
+      },
+      {
+        "name": "Broccoli",
+        "id": 3,
+        "description": "Broccoli is a cruciferous vegetable known for its dense green florets. It is rich in vitamins, minerals, and antioxidants, making it a nutritious addition to any diet.",
+        "price": 120,
+        "discounted_price": 100,
+        "image": "../images/broccoli.jpg"
+      },
+      {
+        "name": "Spinach",
+        "id": 4,
+        "description": "Spinach is a leafy green vegetable packed with nutrients such as iron, calcium, and vitamins A and C. It can be eaten raw in salads or cooked in various dishes.",
+        "price": 80,
+        "discounted_price": 70,
+        "image": "../images/spinach.jpg"
+      },
+      {
+        "name": "Cucumber",
+        "id": 5,
+        "description": "Cucumbers are cylindrical green fruits with a mild flavor and high water content. They are often eaten raw in salads or used as a refreshing snack.",
+        "price": 40,
+        "discounted_price": 35,
+        "image": "../images/cucumber.jpg"
+      },
+      {
+        "name": "Bell Pepper",
+        "id": 6,
+        "description": "Bell peppers, also known as sweet peppers, come in various colors such as red, yellow, and green. They are crunchy and sweet, and can be eaten raw or cooked in a variety of dishes.",
+        "price": 70,
+        "discounted_price": 60,
+        "image": "../images/bell_pepper.jpg"
+      },
+      {
+        "name": "Potato",
+        "id": 7,
+        "description": "Potatoes are starchy tuberous vegetables that are a staple food in many cuisines around the world. They can be boiled, baked, fried, or mashed, and are used in numerous dishes.",
+        "price": 50,
+        "discounted_price": 40,
+        "image": "../images/potato.jpg"
+      },
+      {
+        "name": "Lettuce",
+        "id": 8,
+        "description": "Lettuce is a leafy green vegetable often used as a base for salads. It comes in various types, including iceberg, romaine, and leaf lettuce.",
+        "price": 30,
+        "discounted_price": 25,
+        "image": "../images/lettuce.jpg"
+      },
+      {
+        "name": "Onion",
+        "id": 9,
+        "description": "Onions are aromatic vegetables with layers of flesh surrounding a central core. They are widely used in cooking to add flavor to various dishes.",
+        "price": 45,
+        "discounted_price": 40,
+        "image": "../images/onion.jpg"
+      },
+      {
+        "name": "Zucchini",
+        "id": 10,
+        "description": "Zucchini, also known as courgette, is a summer squash with a mild flavor. It can be grilled, roasted, sautéed, or used in baking.",
+        "price": 55,
+        "discounted_price": 50,
+        "image": "../images/zucchini.jpg"
+      },
+      {
+        "name": "Eggplant",
+        "id": 11,
+        "description": "Eggplant, also known as aubergine, is a versatile vegetable commonly used in Mediterranean and Asian cuisines. It has a meaty texture and absorbs flavors well when cooked.",
+        "price": 65,
+        "discounted_price": 60,
+        "image": "../images/eggplant.jpg"
+      },
+      {
+        "name": "Green Beans",
+        "id": 12,
+        "description": "Green beans, also known as string beans or snap beans, are long, slender vegetables with a crisp texture. They can be steamed, stir-fried, boiled, or roasted.",
+        "price": 75,
+        "discounted_price": 70,
+        "image": "../images/green_beans.jpg"
+      },
+      {
+        "name": "Cabbage",
+        "id": 13,
+        "description": "Cabbage is a leafy green or purple vegetable with dense leaves that can be eaten raw, cooked, or fermented. It is commonly used in salads, coleslaw, stir-fries, and soups.",
+        "price": 55,
+        "discounted_price": 50,
+        "image": "../images/cabbage.jpg"
+      },
+      {
+        "name": "Celery",
+        "id": 14,
+        "description": "Celery is a crunchy, low-calorie vegetable with long stalks and a mild, slightly bitter flavor. It is often used as a snack, in salads, or as a flavoring agent in soups and stews.",
+        "price": 40,
+        "discounted_price": 35,
+        "image": "../images/celery.jpg"
+      },
+      {
+        "name": "Mushroom",
+        "id": 15,
+        "description": "Mushrooms are fungi with a unique flavor and texture. They come in various types, including button, portobello, and shiitake, and can be used in a wide range of dishes, from soups and stir-fries to pizzas and pastas.",
+        "price": 70,
+        "discounted_price": 60,
+        "image": "../images/mushroom.jpg"
+      },
+      {
+        "name": "Cauliflower",
+        "id": 16,
+        "description": "Cauliflower is a versatile vegetable with a mild, slightly nutty flavor. It can be eaten raw, roasted, steamed, or mashed, and is often used as a low-carb alternative to grains and legumes.",
+        "price": 65,
+        "discounted_price": 60,
+        "image": "../images/cauliflower.jpg"
+      },
+      {
+        "name": "Asparagus",
+        "id": 17,
+        "description": "Asparagus is a spring vegetable with long, tender spears and a delicate flavor. It can be steamed, grilled, roasted, or sautéed, and is often served as a side dish or added to salads and omelets.",
+        "price": 90,
+        "discounted_price": 80,
+        "image": "../images/asparagus.jpg"
+      },
+      {
+        "name": "Sweet Potato",
+        "id": 18,
+        "description": "Sweet potatoes are root vegetables with a sweet and starchy taste. They come in various colors, including orange, purple, and white. Sweet potatoes are rich in vitamins, minerals, and antioxidants, making them a nutritious addition to any diet.",
+        "price": 80,
+        "discounted_price": 70,
+        "image": "../images/sweet_potato.jpg"
+      },
+      {
+        "name": "Radish",
+        "id": 19,
+        "description": "Radishes are small, crunchy vegetables with a peppery flavor. They come in various colors, shapes, and sizes and can be eaten raw or cooked. Radishes are low in calories and high in fiber, making them a healthy snack or addition to salads.",
+        "price": 40,
+        "discounted_price": 35,
+        "image": "../images/radish.jpg"
+      },
+      {
+        "name": "Beetroot",
+        "id": 20,
+        "description": "Beetroots, also known as beets, are root vegetables with a sweet and earthy flavor. They come in various colors, including red, yellow, and striped, and can be eaten raw, cooked, or pickled. Beetroots are rich in vitamins, minerals, and antioxidants, making them a nutritious and versatile ingredient.",
+        "price": 60,
+        "discounted_price": 55,
+        "image": "../images/beetroot.jpg"
+      },
+      {
+        "name": "Artichoke",
+        "id": 21,
+        "description": "Artichokes are large, thistle-like vegetables with tender, edible hearts and leaves. They have a mild, slightly nutty flavor and can be steamed, boiled, grilled, or roasted. Artichokes are rich in fiber, vitamins, and minerals, making them a healthy and delicious addition to any meal.",
+        "price": 100,
+        "discounted_price": 90,
+        "image": "../images/artichoke.jpg"
+      },
+      {
+        "name": "Okra",
+        "id": 22,
+        "description": "Okra, also known as lady's fingers, is a green, pod-shaped vegetable with a unique flavor and texture. It is often used in soups, stews, and curries, and can also be fried, roasted, or pickled. Okra is low in calories and rich in fiber, vitamins, and minerals, making it a nutritious and versatile ingredient.",
+        "price": 70,
+        "discounted_price": 65,
+        "image": "../images/okra.jpg"
+      },
+      {
+        "name": "Kale",
+        "id": 23,
+        "description": "Kale is a leafy green vegetable that belongs to the cabbage family. It has a slightly bitter taste and is packed with nutrients like vitamins A, C, and K, as well as antioxidants. Kale can be eaten raw in salads, sautéed, or added to soups and smoothies.",
+        "price": 50,
+        "discounted_price": 45,
+        "image": "../images/kale.jpg"
+      },
+      {
+        "name": "Brussels Sprouts",
+        "id": 24,
+        "description": "Brussels sprouts are small, green cruciferous vegetables that resemble mini cabbages. They have a slightly bitter taste and are rich in vitamins K and C, as well as fiber and antioxidants. Brussels sprouts can be roasted, sautéed, or steamed and are often served as a side dish.",
+        "price": 70,
+        "discounted_price": 60,
+        "image": "../images/brussels_sprouts.jpg"
+      },
+      {
+        "name": "Watercress",
+        "id": 25,
+        "description": "Watercress is a leafy green vegetable with a peppery flavor and a crisp, crunchy texture. It can be eaten raw in salads or sandwiches, or used as a garnish for soups and stews. Watercress is rich in vitamins, minerals, and antioxidants.",
+        "price": 70,
+        "discounted_price": 65,
+        "image": "../images/watercress.jpg"
+      },
+      {
+        "name": "Pumpkin",
+        "id": 26,
+        "description": "Pumpkin is a type of winter squash with a sweet, nutty flavor. It is rich in vitamins A and C, as well as fiber and antioxidants. Pumpkin can be roasted, baked, steamed, or pureed and is commonly used in soups, stews, pies, and desserts.",
+        "price": 80,
+        "discounted_price": 70,
+        "image": "../images/pumpkin.jpg"
+      },
+      {
+        "name": "Corn",
+        "id": 27,
+        "description": "Corn, also known as maize, is a cereal grain that is widely consumed as a staple food. It is rich in carbohydrates and fiber, as well as vitamins and minerals. Corn can be eaten fresh, cooked, or dried and is used in a variety of dishes, including salads, soups, and stir-fries.",
+        "price": 45,
+        "discounted_price": 40,
+        "image": "../images/corn.jpg"
+      },
+      {
+        "name": "Celeriac",
+        "id": 28,
+        "description": "Celeriac, also known as celery root, is a root vegetable with a bulbous, knobby appearance. It has a mild, celery-like flavor and is often used in soups, stews, and purees. Celeriac is rich in vitamins, minerals, and dietary fiber.",
+        "price": 55,
+        "discounted_price": 50,
+        "image": "../images/celeriac.jpg"
+      },
+      {
+        "name": "Turnip",
+        "id": 29,
+        "description": "Turnips are root vegetables with a slightly spicy flavor and a crunchy texture. They can be eaten raw, cooked, or pickled and are often used in soups, stews, and salads. Turnips are low in calories and rich in vitamins, minerals, and antioxidants.",
+        "price": 50,
+        "discounted_price": 45,
+        "image": "../images/turnip.jpg"
+      },
+      {
+        "name": "Rutabaga",
+        "id": 30,
+        "description": "Rutabagas, also known as swedes, are root vegetables that are a cross between turnips and cabbage. They have a slightly sweet and earthy flavor and can be eaten raw, roasted, boiled, or mashed. Rutabagas are rich in vitamins, minerals, and fiber.",
+        "price": 60,
+        "discounted_price": 55,
+        "image": "../images/rutabaga.jpg"
+      },
+      {
+        "name": "Kohlrabi",
+        "id": 31,
+        "description": "Kohlrabi is a bulbous vegetable with a mild, sweet flavor and a crisp, crunchy texture. It can be eaten raw or cooked and is often used in salads, slaws, and stir-fries. Kohlrabi is rich in vitamins, minerals, and antioxidants.",
+        "price": 65,
+        "discounted_price": 60,
+        "image": "../images/kohlrabi.jpg"
+      }
+      
+    ],
+    "fruits": [
+        {
+          "name": "Apple",
+          "id": 101,
+          "description": "Apples are crisp and juicy fruits with a sweet and slightly tart flavor. They come in various colors and are rich in fiber, vitamins, and antioxidants.",
+          "price": 80,
+          "discounted_price": 70,
+          "image": "../images/apple.jpg"
+        },
+        {
+          "name": "Banana",
+          "id": 102,
+          "description": "Bananas are creamy and sweet fruits with a soft texture. They are rich in potassium, vitamins, and dietary fiber, making them a healthy snack option.",
+          "price": 60,
+          "discounted_price": 50,
+          "image": "../images/banana.jpg"
+        },
+        {
+          "name": "Orange",
+          "id": 103,
+          "description": "Oranges are citrus fruits with a bright and tangy flavor. They are rich in vitamin C, antioxidants, and fiber, making them a refreshing and nutritious snack.",
+          "price": 70,
+          "discounted_price": 60,
+          "image": "../images/orange.jpg"
+        },
+        {
+          "name": "Grapes",
+          "id": 104,
+          "description": "Grapes are small, sweet fruits that grow in clusters on vines. They come in various colors, including green, red, and purple, and are often eaten fresh or used to make wine, juice, or jelly.",
+          "price": 100,
+          "discounted_price": 90,
+          "image": "../images/grapes.jpg"
+        },
+        {
+          "name": "Strawberry",
+          "id": 105,
+          "description": "Strawberries are juicy, red berries with a sweet and slightly tart flavor. They are rich in vitamin C, antioxidants, and dietary fiber, making them a popular and nutritious snack.",
+          "price": 120,
+          "discounted_price": 110,
+          "image": "../images/strawberry.jpg"
+        },
+        {
+          "name": "Pineapple",
+          "id": 106,
+          "description": "Pineapples are tropical fruits with a sweet and tangy flavor. They are rich in vitamin C, manganese, and bromelain, an enzyme that may have anti-inflammatory properties.",
+          "price": 150,
+          "discounted_price": 140,
+          "image": "../images/pineapple.jpg"
+        },
+        {
+          "name": "Mango",
+          "id": 107,
+          "description": "Mangoes are juicy, tropical fruits with a sweet and tangy flavor. They are rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 100,
+          "discounted_price": 90,
+          "image": "../images/mango.jpg"
+        },
+        {
+          "name": "Watermelon",
+          "id": 108,
+          "description": "Watermelons are large, juicy fruits with a sweet and refreshing flavor. They are high in water content and rich in vitamins A and C, as well as antioxidants.",
+          "price": 80,
+          "discounted_price": 70,
+          "image": "../images/watermelon.jpg"
+        },
+        {
+          "name": "Kiwi",
+          "id": 109,
+          "description": "Kiwi, also known as Chinese gooseberry, is a small, fuzzy fruit with a sweet and tart flavor. It is rich in vitamin C, vitamin K, and dietary fiber.",
+          "price": 60,
+          "discounted_price": 50,
+          "image": "../images/kiwi.jpg"
+        },
+        {
+          "name": "Peach",
+          "id": 110,
+          "description": "Peaches are soft, juicy fruits with a sweet and slightly tangy flavor. They are rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 90,
+          "discounted_price": 80,
+          "image": "../images/peach.jpg"
+        },
+        {
+          "name": "Pear",
+          "id": 111,
+          "description": "Pears are sweet and juicy fruits with a slightly grainy texture. They come in various colors and are rich in vitamins C and K, as well as dietary fiber.",
+          "price": 70,
+          "discounted_price": 60,
+          "image": "../images/pear.jpg"
+        },
+        {
+          "name": "Plum",
+          "id": 112,
+          "description": "Plums are small, sweet fruits with a smooth, often purple skin and a juicy flesh. They are rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 80,
+          "discounted_price": 70,
+          "image": "../images/plum.jpg"
+        },
+        {
+          "name": "Cherry",
+          "id": 113,
+          "description": "Cherries are small, round fruits with a sweet and tart flavor. They come in various colors, including red, yellow, and black, and are rich in vitamins, antioxidants, and dietary fiber.",
+          "price": 100,
+          "discounted_price": 90,
+          "image": "../images/cherry.jpg"
+        },
+        {
+          "name": "Blueberry",
+          "id": 114,
+          "description": "Blueberries are small, round berries with a sweet and tangy flavor. They are rich in antioxidants, vitamins, and dietary fiber, and are often eaten fresh or used in baking.",
+          "price": 120,
+          "discounted_price": 110,
+          "image": "../images/blueberry.jpg"
+        },
+        {
+          "name": "Raspberry",
+          "id": 115,
+          "description": "Raspberries are small, delicate berries with a sweet and slightly tart flavor. They are rich in antioxidants, vitamins, and dietary fiber, and are often eaten fresh or used in desserts and jams.",
+          "price": 110,
+          "discounted_price": 100,
+          "image": "../images/raspberry.jpg"
+        },
+        {
+          "name": "Blackberry",
+          "id": 116,
+          "description": "Blackberries are dark, juicy berries with a sweet and slightly tart flavor. They are rich in antioxidants, vitamins, and dietary fiber, and are often eaten fresh or used in desserts and smoothies.",
+          "price": 130,
+          "discounted_price": 120,
+          "image": "../images/blackberry.jpg"
+        },
+        {
+          "name": "Apricot",
+          "id": 117,
+          "description": "Apricots are small, golden-orange fruits with a sweet and slightly tart flavor. They are rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 90,
+          "discounted_price": 80,
+          "image": "../images/apricot.jpg"
+        },
+        {
+          "name": "Cantaloupe",
+          "id": 118,
+          "description": "Cantaloupes, also known as muskmelons or rockmelons, are sweet and juicy fruits with a soft, orange flesh and a rough, netted skin. They are rich in vitamins A and C, as well as antioxidants.",
+          "price": 80,
+          "discounted_price": 70,
+          "image": "../images/cantaloupe.jpg"
+        },
+        {
+          "name": "Honeydew Melon",
+          "id": 119,
+          "description": "Honeydew melons are sweet and juicy fruits with a pale green flesh and a smooth, waxy skin. They are rich in vitamins C and K, as well as antioxidants.",
+          "price": 85,
+          "discounted_price": 75,
+          "image": "../images/honeydew_melon.jpg"
+        },
+        {
+          "name": "Grapefruit",
+          "id": 120,
+          "description": "Grapefruits are citrus fruits with a tart and tangy flavor. They come in various colors, including pink, red, and white, and are rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 70,
+          "discounted_price": 60,
+          "image": "../images/grapefruit.jpg"
+        }
+    ],
+    "juices": [
+        {
+          "name": "Apple Juice",
+          "id": 201,
+          "description": "Apple juice is a refreshing beverage made from pressed apples. It has a sweet and tangy flavor and is rich in vitamins and antioxidants.",
+          "price": 100,
+          "discounted_price": 90,
+          "image": "../images/apple_juice.jpg"
+        },
+        {
+          "name": "Banana Smoothie",
+          "id": 202,
+          "description": "Banana smoothie is a creamy beverage made from blended bananas and other ingredients such as yogurt, milk, or fruit juice. It is rich in potassium, vitamins, and protein.",
+          "price": 120,
+          "discounted_price": 110,
+          "image": "../images/banana_smoothie.jpg"
+        },
+        {
+          "name": "Orange Juice",
+          "id": 203,
+          "description": "Orange juice is a refreshing beverage made from squeezed oranges. It has a bright and tangy flavor and is rich in vitamin C and antioxidants.",
+          "price": 90,
+          "discounted_price": 80,
+          "image": "../images/orange_juice.jpg"
+        },
+        {
+          "name": "Grape Juice",
+          "id": 204,
+          "description": "Grape juice is a sweet and flavorful beverage made from pressed grapes. It is rich in antioxidants and vitamins and is often enjoyed as a refreshing drink.",
+          "price": 110,
+          "discounted_price": 100,
+          "image": "../images/grape_juice.jpg"
+        },
+        {
+          "name": "Strawberry Smoothie",
+          "id": 205,
+          "description": "Strawberry smoothie is a creamy and fruity beverage made from blended strawberries, yogurt, milk, or juice. It is rich in vitamin C, antioxidants, and dietary fiber.",
+          "price": 130,
+          "discounted_price": 120,
+          "image": "../images/strawberry_smoothie.jpg"
+        },
+        {
+          "name": "Pineapple Juice",
+          "id": 206,
+          "description": "Pineapple juice is a tropical beverage made from squeezed pineapples. It has a sweet and tangy flavor and is rich in vitamin C, manganese, and bromelain.",
+          "price": 120,
+          "discounted_price": 110,
+          "image": "../images/pineapple_juice.jpg"
+        },
+        {
+          "name": "Mango Smoothie",
+          "id": 207,
+          "description": "Mango smoothie is a creamy and tropical beverage made from blended mangoes, yogurt, milk, or juice. It is rich in vitamins A and C, antioxidants, and dietary fiber.",
+          "price": 140,
+          "discounted_price": 130,
+          "image": "../images/mango_smoothie.jpg"
+        },
+        {
+          "name": "Watermelon Juice",
+          "id": 208,
+          "description": "Watermelon juice is a refreshing beverage made from squeezed watermelons. It has a sweet and hydrating flavor and is rich in vitamins A and C, as well as antioxidants.",
+          "price": 100,
+          "discounted_price": 90,
+          "image": "../images/watermelon_juice.jpg"
+        },
+        {
+          "name": "Kiwi Smoothie",
+          "id": 209,
+          "description": "Kiwi smoothie is a creamy and tangy beverage made from blended kiwis, yogurt, milk, or juice. It is rich in vitamin C, vitamin K, and dietary fiber.",
+          "price": 110,
+          "discounted_price": 100,
+          "image": "../images/kiwi_smoothie.jpg"
+        },
+        {
+          "name": "Peach Juice",
+          "id": 210,
+          "description": "Peach juice is a flavorful beverage made from squeezed peaches. It has a sweet and slightly tart flavor and is rich in vitamins A and C, as well as antioxidants.",
+          "price": 95,
+          "discounted_price": 85,
+          "image": "../images/peach_juice.jpg"
+        },
+        {
+          "name": "Pear Smoothie",
+          "id": 211,
+          "description": "Pear smoothie is a creamy and sweet beverage made from blended pears, yogurt, milk, or juice. It is rich in vitamins C and K, as well as dietary fiber.",
+          "price": 105,
+          "discounted_price": 95,
+          "image": "../images/pear_smoothie.jpg"
+        },
+        {
+          "name": "Plum Juice",
+          "id": 212,
+          "description": "Plum juice is a flavorful beverage made from pressed plums. It has a sweet and tangy flavor and is rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 100,
+          "discounted_price": 90,
+          "image": "../images/plum_juice.jpg"
+        },
+        {
+          "name": "Cherry Smoothie",
+          "id": 213,
+          "description": "Cherry smoothie is a creamy and fruity beverage made from blended cherries, yogurt, milk, or juice. It is rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 120,
+          "discounted_price": 110,
+          "image": "../images/cherry_smoothie.jpg"
+        },
+        {
+          "name": "Blueberry Juice",
+          "id": 214,
+          "description": "Blueberry juice is a sweet and tangy beverage made from squeezed blueberries. It is rich in antioxidants, vitamins, and dietary fiber, and is often enjoyed as a refreshing drink.",
+          "price": 110,
+          "discounted_price": 100,
+          "image": "../images/blueberry_juice.jpg"
+        },
+        {
+          "name": "Raspberry Smoothie",
+          "id": 215,
+          "description": "Raspberry smoothie is a creamy and tangy beverage made from blended raspberries, yogurt, milk, or juice. It is rich in antioxidants, vitamins, and dietary fiber.",
+          "price": 125,
+          "discounted_price": 115,
+          "image": "../images/raspberry_smoothie.jpg"
+        },
+        {
+          "name": "Blackberry Juice",
+          "id": 216,
+          "description": "Blackberry juice is a sweet and flavorful beverage made from pressed blackberries. It is rich in antioxidants, vitamins, and dietary fiber, and is often enjoyed as a refreshing drink.",
+          "price": 115,
+          "discounted_price": 105,
+          "image": "../images/blackberry_juice.jpg"
+        },
+        {
+          "name": "Apricot Smoothie",
+          "id": 217,
+          "description": "Apricot smoothie is a creamy and fruity beverage made from blended apricots, yogurt, milk, or juice. It is rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 130,
+          "discounted_price": 120,
+          "image": "../images/apricot_smoothie.jpg"
+        },
+        {
+          "name": "Cantaloupe Juice",
+          "id": 218,
+          "description": "Cantaloupe juice is a refreshing beverage made from squeezed cantaloupes. It has a sweet and hydrating flavor and is rich in vitamins A and C, as well as antioxidants.",
+          "price": 105,
+          "discounted_price": 95,
+          "image": "../images/cantaloupe_juice.jpg"
+        },
+        {
+          "name": "Honeydew Melon Smoothie",
+          "id": 219,
+          "description": "Honeydew melon smoothie is a creamy and refreshing beverage made from blended honeydew melons, yogurt, milk, or juice. It is rich in vitamins A and C, as well as antioxidants.",
+          "price": 115,
+          "discounted_price": 105,
+          "image": "../images/honeydew_melon_smoothie.jpg"
+        },
+        {
+          "name": "Grapefruit Juice",
+          "id": 220,
+          "description": "Grapefruit juice is a tangy and refreshing beverage made from squeezed grapefruits. It is rich in vitamins A and C, as well as antioxidants and dietary fiber.",
+          "price": 95,
+          "discounted_price": 85,
+          "image": "../images/grapefruit_juice.jpg"
+        }
+    ],
+    "cereals": [
+        {
+          "name": "Corn Flakes",
+          "id": 301,
+          "description": "Corn flakes are a popular breakfast cereal made from toasted corn grits. They are often served with milk and are a good source of carbohydrates and essential vitamins and minerals.",
+          "price": 50,
+          "discounted_price": 45,
+          "image": "../images/corn_flakes.jpg"
+        },
+        {
+          "name": "Oatmeal",
+          "id": 302,
+          "description": "Oatmeal is a nutritious breakfast cereal made from rolled or ground oats. It is high in fiber and protein and can be served with milk, fruit, or nuts for added flavor and nutrition.",
+          "price": 60,
+          "discounted_price": 55,
+          "image": "../images/oatmeal.jpg"
+        },
+        {
+          "name": "Rice Krispies",
+          "id": 303,
+          "description": "Rice Krispies are a crispy breakfast cereal made from rice grains that have been puffed and toasted. They are often served with milk and are a popular choice for children.",
+          "price": 40,
+          "discounted_price": 35,
+          "image": "../images/rice_krispies.jpg"
+        },
+        {
+          "name": "Frosted Flakes",
+          "id": 304,
+          "description": "Frosted flakes are a sweet and crispy breakfast cereal made from corn grits that have been coated with sugar and toasted. They are often served with milk and are a favorite among children.",
+          "price": 55,
+          "discounted_price": 50,
+          "image": "../images/frosted_flakes.jpg"
+        },
+        {
+          "name": "Cheerios",
+          "id": 305,
+          "description": "Cheerios are a popular breakfast cereal made from toasted oats in the shape of small, round rings. They are often served with milk and are known for their heart-healthy benefits.",
+          "price": 45,
+          "discounted_price": 40,
+          "image": "../images/cheerios.jpg"
+        },
+        {
+          "name": "Cocoa Puffs",
+          "id": 306,
+          "description": "Cocoa Puffs are a chocolate-flavored breakfast cereal made from puffed corn grains. They are often served with milk and are a favorite among chocolate lovers.",
+          "price": 60,
+          "discounted_price": 55,
+          "image": "../images/cocoa_puffs.jpg"
+        },
+        {
+          "name": "Lucky Charms",
+          "id": 307,
+          "description": "Lucky Charms are a sweet and colorful breakfast cereal made from toasted oats with marshmallow shapes. They are often served with milk and are popular among children.",
+          "price": 65,
+          "discounted_price": 60,
+          "image": "../images/lucky_charms.jpg"
+        },
+        {
+          "name": "Froot Loops",
+          "id": 308,
+          "description": "Froot Loops are a fruity breakfast cereal made from corn flour with artificial fruit flavors and colors. They are often served with milk and are a favorite among children.",
+          "price": 55,
+          "discounted_price": 50,
+          "image": "../images/froot_loops.jpg"
+        },
+        {
+          "name": "Honey Nut Cheerios",
+          "id": 309,
+          "description": "Honey Nut Cheerios are a sweet and nutty breakfast cereal made from toasted oats with honey and almond flavor. They are often served with milk and are known for their heart-healthy benefits.",
+          "price": 50,
+          "discounted_price": 45,
+          "image": "../images/honey_nut_cheerios.jpg"
+        },
+        {
+          "name": "Raisin Bran",
+          "id": 310,
+          "description": "Raisin Bran is a breakfast cereal made from toasted bran flakes with raisins. It is often served with milk and is a good source of fiber and essential vitamins and minerals.",
+          "price": 55,
+          "discounted_price": 50,
+          "image": "../images/raisin_bran.jpg"
+        },
+        {
+          "name": "Cinnamon Toast Crunch",
+          "id": 311,
+          "description": "Cinnamon Toast Crunch is a sweet and cinnamon-flavored breakfast cereal made from toasted squares of corn and rice. It is often served with milk and is a favorite among children.",
+          "price": 60,
+          "discounted_price": 55,
+          "image": "../images/cinnamon_toast_crunch.jpg"
+        },
+        {
+          "name": "Granola",
+          "id": 312,
+          "description": "Granola is a nutritious breakfast cereal made from rolled oats, nuts, seeds, and dried fruits, baked until crisp. It is often served with yogurt or milk and is a good source of fiber and protein.",
+          "price": 70,
+          "discounted_price": 65,
+          "image": "../images/granola.jpg"
+        },
+        {
+          "name": "Special K",
+          "id": 313,
+          "description": "Special K is a lightly toasted breakfast cereal made from rice and wheat flakes. It is often served with milk and is known for its low calorie and high protein content.",
+          "price": 45,
+          "discounted_price": 40,
+          "image": "../images/special_k.jpg"
+        },
+        {
+          "name": "Fiber One",
+          "id": 314,
+          "description": "Fiber One is a high-fiber breakfast cereal made from bran flakes and fiber-rich ingredients. It is often served with milk and is known for its digestive health benefits.",
+          "price": 55,
+          "discounted_price": 50,
+          "image": "../images/fiber_one.jpg"
+        },
+        {
+          "name": "Shredded Wheat",
+          "id": 315,
+          "description": "Shredded Wheat is a classic breakfast cereal made from whole wheat strands. It is often served with milk and is known for its simplicity and natural flavor.",
+          "price": 40,
+          "discounted_price": 35,
+          "image": "../images/shredded_wheat.jpg"
+        },
+        {
+          "name": "Raisin Nut Bran",
+          "id": 316,
+          "description": "Raisin Nut Bran is a hearty breakfast cereal made from bran flakes with raisins and almonds. It is often served with milk and is a good source of fiber and essential vitamins and minerals.",
+          "price": 60,
+          "discounted_price": 55,
+          "image": "../images/raisin_nut_bran.jpg"
+        },
+        {
+          "name": "Wheaties",
+          "id": 317,
+          "description": "Wheaties is a classic breakfast cereal made from toasted whole wheat flakes. It is often served with milk and is known for its iconic brand and sports-themed packaging.",
+          "price": 50,
+          "discounted_price": 45,
+          "image": "../images/wheaties.jpg"
+        },
+        {
+          "name": "Puffed Rice",
+          "id": 318,
+          "description": "Puffed Rice is a light and crispy breakfast cereal made from rice grains that have been puffed under high pressure. It is often served with milk and is a low-calorie option.",
+          "price": 35,
+          "discounted_price": 30,
+          "image": "../images/puffed_rice.jpg"
+        },
+        {
+          "name": "Quaker Oats",
+          "id": 319,
+          "description": "Quaker Oats is a classic breakfast cereal made from rolled oats. It is often served as oatmeal or porridge with milk or water and is known for its heart-healthy benefits.",
+          "price": 40,
+          "discounted_price": 35,
+          "image": "../images/quaker_oats.jpg"
+        },
+        {
+          "name": "Cap'n Crunch",
+          "id": 320,
+          "description": "Cap'n Crunch is a sweet and crunchy breakfast cereal made from corn and oats. It is often served with milk and is a favorite among children.",
+          "price": 55,
+          "discounted_price": 50,
+          "image": "../images/capn_crunch.jpg"
+        }
+      ]
+  }
