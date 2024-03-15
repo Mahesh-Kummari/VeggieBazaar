@@ -1,9 +1,6 @@
 # Node.js
 node_modules/
 
-# SQLite database
-*.db
-
 # IDE or editor specific files
 .vscode/
 .idea/
