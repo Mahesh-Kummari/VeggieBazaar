@@ -1,3 +1,5 @@
+
+
 let menuBtn = document.getElementById("menu-icon");
 let menu = document.querySelector('.ul');
 let vegetablesContainer = document.getElementById("vegetablesContainer");
@@ -10,23 +12,41 @@ let MAX_FRUIT_CARDS_TO_DISPLAY = 8;
 let MAX_JUICE_CARDS_TO_DISPLAY = 8;
 let MAX_CEREAL_CARDS_TO_DISPLAY = 8;
 
-fetch('http://localhost:3000/getProducts')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json(); 
-  })
-  .then(data => {
-    displayVegetables(data.vegetables) 
-    displayFruits(data.fruits) 
-    displayJuices(data.juices) 
-    displayCereals(data.cereals) 
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  })
+let vegetablesArray = [];
+let fruitsArray = [];
+let juicesArray = [];
+let cerealsArray = [];
 
+async function fetchProductsDetails(){
+  try {
+    let response = await fetch('http://localhost:3000/getProducts');
+    if(response.ok){
+        let data = await response.json();
+        for (let item of data){
+          if(item.category === "Vegetables"){
+            vegetablesArray.push(item)
+          }else if(item.category === "Fruits"){
+            fruitsArray.push(item)
+          }else if(item.category === "Juices"){
+            juicesArray.push(item)
+          }else if(item.category === "Cereals"){
+            cerealsArray.push(item)
+          }
+        }
+      
+        await displayVegetables(vegetablesArray);
+        await displayFruits(fruitsArray);
+        await displayJuices(juicesArray);
+        await displayCereals(cerealsArray); 
+    }
+    else{
+      throw new Error('Failed to fetch products.')
+    }
+  } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+  }
+}
+fetchProductsDetails();
 
 menuBtn.addEventListener("click", ()=>{
   menuBtn.classList.toggle("fa-bars")
@@ -167,6 +187,9 @@ function createCard(item, parentContainer){
   let icon3 = document.createElement("i");
   icon3.classList.add("fa-solid", "fa-heart");
   iconEl3.appendChild(icon3)
+
+  let aEl = document.createElement("a");
+  div.appendChild(aEl)
 };
 
 function handleProductContainerClick(event, containerId) {
@@ -189,11 +212,5 @@ juicesContainer.addEventListener("click", (event) => {
 cerealsContainer.addEventListener("click", (event) => {
   handleProductContainerClick(event, "cerealsContainer");
 });
-function navigateToSingleProductPage(productId) {
-  // Construct the URL of the single product page with the product ID as a query parameter
-  const singleProductPageUrl = `showSingleProductPage?id=${productId}`;
 
-  // Navigate to the single product page
-  window.location.href = singleProductPageUrl;
-}
 
