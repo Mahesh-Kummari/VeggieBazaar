@@ -1,10 +1,10 @@
 import express from 'express';
 import  sqlite3  from 'sqlite3';
 import {open} from 'sqlite';
-import path , {dirname} from 'path';
+import path  from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
-import router from './routes/routes.js'; 
+import {router} from './routes/routes.js'
 
 const app = express();
 
@@ -37,7 +37,7 @@ const  initializeDBandServer = async ()=>{
 initializeDBandServer();
 
 
-export {db, __dirname, path} ;
+export {db, router, __dirname, path} ;
 
 
 

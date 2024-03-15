@@ -95,10 +95,10 @@ function addShowMoreButton(parentContainer, productsArr) {
       for (let i = startIdx + 1; i <= endIdx && i < productsArr.length; i++) {
         createCard(productsArr[i], parentContainer);
       }
+      appendShowMoreButton(); // Re-append the button after displaying more products
       if (endIdx >= productsArr.length - 1) {
         showMoreButton.style.display = "none";
       }
-      appendShowMoreButton(); // Re-append the button after displaying more products
     });
     parentContainer.appendChild(showMoreButton);
   }

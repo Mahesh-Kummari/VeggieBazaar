@@ -1,6 +1,5 @@
+import { db,  __dirname, path} from '../index.js'; 
 import express from 'express';
-import { db , __dirname, path} from '../index.js'; 
-
 const router = express.Router();
 
 async function authenticateUser(req, res, next) {
@@ -37,12 +36,13 @@ router.get('/', (req, res)=>{
     }
     
 });
-router.get('/getProducts', (req, res)=>{
-    try{
-        let filePath = path.join(__dirname, "api-data.json");
-        res.sendFile(filePath);
-    }catch(error){
-        res.status(500).send('Internal Server Error');
+router.get('/getProducts', async (req, res)=>{
+    try {
+        let getProductsQuery = `SELECT * FROM products;`;
+        let productsJson = await db.all(getProductsQuery);
+        res.send(productsJson);
+    } catch (error) {
+        res.status(500).send(`Internal Server Error : ${error.message}`);
     }
     
 });
@@ -271,10 +271,4 @@ router.get('/showSingleProductPage?id=${productId}', async (req, res)=>{
 });
 
 
-
-
-
-
-
-
-export default router;
+export {router};
