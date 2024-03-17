@@ -10,8 +10,8 @@
       crossorigin="anonymous"
     ></script>
     <title>Veggie Bazaar | Product</title>
-    <link rel="stylesheet" href="../public/css/singleProduct.css" />
-    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/singleProduct.css" />
   </head>
   <body loading="lazy">
     <header class="header" id="header">
@@ -20,22 +20,22 @@
           <div class="btn-and-categorys">
               <i id="menu-icon" class="fa-solid fa-bars menu-btn"></i>
             <ul class="ul">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="#">About</a></li>
               <li><a href="index.html#ourProducts">Shop</a></li>
               <li><a href="#">Contact</a></li>
-              <li><a id="login" href="#">Login</a></li>
+              <li><a id="login" href="/showRegistrationLoginPage">Login</a></li>
             </ul>
           </div>
         </nav>
     </header>
-    <a href="#" class="fa-solid fa-angles-up arrow-up"></a>
+    <a href="#" id="arrowBtn" class="fa-solid fa-angles-up arrow-up"></a>
     <section class="single-product-section">
         <div class="product-image-card">
-            <img class="product-image" src="../public/images/carret.jpg" alt="product-image">
+            <img class="product-image" src="/images/product-default-image.jpeg" alt="product-image">
         </div>
         <div class="product-details-card">
-            <h3 class="product-name">Carrot</h3>
+            <h3 class="product-name">Product Name</h3>
             <div class="rating-container">
                 <p class="rating">4.5</p>
                 <p class="stars-icon-card"></p>
@@ -72,9 +72,9 @@
         <div class="menu-card">
           <h5>Menu</h5>
           <ul class="menu">
-            <li><a href="#">Shop</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Journal</a></li>
+            <li><a href="index.html#ourProducts">Shop</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
       </div>
@@ -102,5 +102,5 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="../public/js/singleProduct.js" defer></script>
+    <script src="/js/singleProduct.js" ></script>
   </body>

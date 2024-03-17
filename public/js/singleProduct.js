@@ -2,6 +2,11 @@ let decrementBtn = document.querySelector(".decrementBtn");
 let incrementBtn = document.querySelector(".incrementBtn");
 let countEl = document.querySelector(".count");
 let starsIconCard = document.querySelector(".stars-icon-card");
+let arrowUp = document.getElementById("arrowBtn");
+
+let currentPath = window.location.pathname;
+let pathSegments = currentPath.split('/');
+let myProductId = parseInt(pathSegments[pathSegments.length - 1]);
 
 let singleProductSection = document.querySelector(".single-product-section");
 let productImage = document.querySelector(".product-image");
@@ -23,7 +28,6 @@ incrementBtn.addEventListener("click", ()=>{
     count += 1;
     countEl.value = count ;
 });
-
 function displayRatingStars(){
     let rating = document.querySelector(".rating").textContent;
     if (!isNaN(rating)){
@@ -47,57 +51,46 @@ function displayRatingStars(){
     }
 };
 displayRatingStars()
+window.addEventListener("scroll", function(){
+    arrowUp.style.opacity = (window.scrollY > 20) ? 1 : 0;
+  });
+arrowUp.addEventListener("click", function(){
+    window.scrollTo({
+        top:0,
+        behavior : "smooth"
+    });
+});
 
-// Function to get query parameter value by name from URL
-function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
-const productId = getQueryParam('id');
-
-fetch('http://localhost:3000/getProducts')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json(); 
-  })
-  .then(data => {
-    if (productId > 0 && productId < 100){
-        getProduct(productId, data.vegetables)
-    }
-    else if (productId > 100 && productId < 200){
-        getProduct(productId, data.fruits)
-    }
-    else if (productId > 200 && productId < 300){
-        getProduct(productId, data.juices)
-    }
-    else if (productId > 300 && productId < 400){
-        getProduct(productId, data.cereals)
-    } 
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  })
-function getProduct(productId, productsArr){
-    for (let product of productsArr){
-        if (product.id == productId){
-            displaySingleItem(product);
-            break;
+const getSingleProductDetails = ()=>{
+    let url = '/getSingleProductDetails/' + myProductId;
+    fetch(url)
+    .then(response => {
+        if(!response.ok){
+            throw new Error('Network response was not ok');
+        };
+        return response.json();
+    })
+    .then(data => {
+        displaySingleItem(data);
+    })
+    .catch(error => {
+        if (error instanceof SyntaxError) {
+            console.log('Response is not a valid JSON');
+        } else {
+            console.error(`Error in fetching single product details: ${error.message}`);
         }
-    }
+    });
 }
+getSingleProductDetails();
 function displaySingleItem(product){
     singleProductSection.id = product.id;
     productName.textContent = product.name;
-    actualPrice.textContent = product.discounted_price;
-    price.textContent = product.price;
+    actualPrice.textContent = "₹ "+ product.discounted_price;
+    price.textContent = "₹ "+ product.price ;
     description.textContent = product.description;
     productImage.src = product.image;
     productImage.onerror = () =>{
-        productImage.src = "../public/images/fruits-and-vegetables-boxes.jpg";
+        productImage.src = "/images/product-default-image.jpeg";
     }
 }
-
-
 

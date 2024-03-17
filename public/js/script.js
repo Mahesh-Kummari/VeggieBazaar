@@ -6,6 +6,7 @@ let vegetablesContainer = document.getElementById("vegetablesContainer");
 let fruitsContainer = document.getElementById("fruitsContainer");
 let juicesContainer = document.getElementById("juicesContainer");
 let cerealsContainer = document.getElementById("cerealsContainer");
+let arrowUp = document.getElementById("arrowBtn");
 
 let MAX_VEG_CARDS_TO_DISPLAY = 8;
 let MAX_FRUIT_CARDS_TO_DISPLAY = 8;
@@ -55,7 +56,6 @@ menuBtn.addEventListener("click", ()=>{
 });
 //scroll
 const categoryCards = document.querySelectorAll(".c-inner");
-
 categoryCards.forEach((card) => {
     card.addEventListener("click", (event) => {
         const targetContainerId = event.currentTarget.dataset.target;
@@ -65,8 +65,6 @@ categoryCards.forEach((card) => {
         }
     });
 });
-
-
 function displayVegetables(vegetablesArray){
   for (let i = 0; i < vegetablesArray.length && i < MAX_VEG_CARDS_TO_DISPLAY; i++) {
     createCard(vegetablesArray[i], vegetablesContainer);
@@ -130,6 +128,10 @@ function createCard(item, parentContainer){
   div.classList.add("op-product");
   div.id = item.id;
   parentContainer.appendChild(div)
+  
+  div.addEventListener("click", ()=>{
+    window.location.href = `/showSingleProductPage/${item.id}`;
+  });
 
   let image = document.createElement("img");
   image.classList.add("op-product-image");
@@ -145,6 +147,7 @@ function createCard(item, parentContainer){
   nameEl.classList.add("op-product-name");
   nameEl.textContent = item.name;
   div.appendChild(nameEl);
+  
 
   let priceEl = document.createElement("p");
   priceEl.classList.add("op-product-price");
@@ -188,29 +191,36 @@ function createCard(item, parentContainer){
   icon3.classList.add("fa-solid", "fa-heart");
   iconEl3.appendChild(icon3)
 
-  let aEl = document.createElement("a");
-  div.appendChild(aEl)
 };
+// function handleProductContainerClick(event, containerId) {
+//   if (event.target.id !== containerId) {
+//       const id = event.target.closest(".op-product").id;
+//       if (id !== undefined) {
 
-function handleProductContainerClick(event, containerId) {
-  if (event.target.id !== containerId) {
-      const id = event.target.closest(".op-product").id;
-      if (id !== undefined) {
-          navigateToSingleProductPage(id);
-      }
-  }
-}
-vegetablesContainer.addEventListener("click", (event) => {
-  handleProductContainerClick(event, "vegetablesContainer");
+//           navigateToSingleProductPage(id);
+//       }
+//   }
+// }
+// vegetablesContainer.addEventListener("click", (event) => {
+//   handleProductContainerClick(event, "vegetablesContainer");
+// });
+// fruitsContainer.addEventListener("click", (event) => {
+//   handleProductContainerClick(event, "fruitsContainer");
+// });
+// juicesContainer.addEventListener("click", (event) => {
+//   handleProductContainerClick(event, "juicesContainer");
+// });
+// cerealsContainer.addEventListener("click", (event) => {
+//   handleProductContainerClick(event, "cerealsContainer");
+// });
+window.addEventListener("scroll", function(){
+  arrowUp.style.opacity = (window.scrollY > 20) ? 1 : 0;
 });
-fruitsContainer.addEventListener("click", (event) => {
-  handleProductContainerClick(event, "fruitsContainer");
-});
-juicesContainer.addEventListener("click", (event) => {
-  handleProductContainerClick(event, "juicesContainer");
-});
-cerealsContainer.addEventListener("click", (event) => {
-  handleProductContainerClick(event, "cerealsContainer");
+arrowUp.addEventListener("click", function(){
+  window.scrollTo({
+    top:0,
+    behavior : "smooth"
+  });
 });
 
 

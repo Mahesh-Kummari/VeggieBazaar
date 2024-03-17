@@ -9,7 +9,7 @@ let conformPasswordEl = document.getElementById("conformPassword");
 let mobileEl = document.getElementById("mobile");
 
 function onRegistrationImageError(){
-    registrationImage.src = "../public/images/register2.jpg";
+    registrationImage.src = "/images/register2.jpg";
 };
 showHidePasswordIcon.addEventListener("click", ()=>{
     showHidePasswordIcon.classList.toggle("fa-eye-slash");
@@ -44,9 +44,9 @@ registerForm.addEventListener("submit", (e)=>{
 });
 function checkAndRegisterUser(userObj){
     console.log(userObj);
-    isUserRegistered(userObj){
+    // isUserRegistered(userObj){
         
-    }
+    // }
     // complete the function----------------------------
 
 };
