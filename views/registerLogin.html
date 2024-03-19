@@ -37,23 +37,28 @@
             </div>
             <form class="registration-form" id="registerForm">
                 <h2>Registration</h2>
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="Enter your full name" required>
+                <label for="fullName" class="label">Full Name</label>
+                <input type="text" class="input-field" id="fullName" placeholder="Enter your full name" required>
 
-                <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter your email address"  required>
+                <label for="email"  class="label">Email</label>
+                <input type="text"  class="input-field"  id="email" placeholder="Enter your email address"  required>
 
-                <label for="password">Password</label>
-                <input type="text" id="password"  placeholder="Enter your password"  required />
+                <label for="password" class="label">Password</label>
+                <input type="text" class="input-field"  id="password"  placeholder="Enter your password"  required />
 
-                <label for="conformPassword">Conform Password</label>
-                <input type="password" id="conformPassword" placeholder="Conform your password"  required>
-                <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
+                <label for="conformPassword" class="label">Conform Password</label>
+                <div>
+                    <input type="password" class="input-field"  id="conformPassword" placeholder="Conform your password"  required>
+                    <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
+                </div>
                 
-                <label for="mobile">Mobile Number</label>
-                <input type="text" id="mobile" placeholder="Enter your mobile number"  required>
+                <label for="mobile" class="label">Mobile Number</label>
+                <input type="text" class="input-field"  id="mobile" placeholder="Enter your mobile number"  required>
                 
-                <button type="submit" id="registerButton">Register</button>
+                <div>
+                    <button type="submit" id="registerButton">Register</button>
+                    <a href="#">Have an account LOGIN</a>
+                </div>
             </form>
             
         </div>
@@ -65,15 +70,17 @@
             </div>
             <form class="login-form" id="loginForm">
                 <h2>Login</h2>
-                <label for="email">Email</label>
-                <input type="text" id="loginEmail" placeholder="Enter your email address"  required>
+                <label for="email" class="label">Email</label>
+                <input type="text"  class="input-field" id="loginEmail" placeholder="Enter your email address"  required>
 
-                <label for="password">Password</label>
-                <input type="text" id="loginPassword"  placeholder="Enter your password"  required />
+                <label for="password" class="label">Password</label>
+                <input type="text" class="input-field"  id="loginPassword"  placeholder="Enter your password"  required />
                 <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
 
-                
-                <button type="submit" id="loginButton">Login</button>
+                <div>
+                    <button type="submit" id="loginButton">Login</button>
+                    <a href="#">Create new account?</a>
+                </div>
             </form>
             
         </div>
