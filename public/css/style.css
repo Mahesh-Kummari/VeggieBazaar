@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 html {
-    scroll-behavior: smooth;
+    behavior: smooth;
 }
 *{
     margin: 0;
@@ -54,7 +54,6 @@ html {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* gap: 30px; */
 }
 .d-block{
     display: block !important;
@@ -83,7 +82,7 @@ html {
     font-size: clamp(20px, 3vw, 30px);
     padding: 20px;
     border-radius: 50%;
-
+    opacity: 0;
 }
 .arrow-up:hover{
     text-decoration: none;
@@ -241,7 +240,7 @@ html {
 }
 .product-heading{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 40px;
     text-decoration: underline;
 }
 .our-products-section{
@@ -468,7 +467,7 @@ html {
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-align: left;
+    scroll-snap-align: center;
     width: 100%;
 }
 .testimonial {
@@ -585,7 +584,7 @@ html {
 }
 .icons a > i:hover{
     transform: scale(1.2) ;
-    text-decoration: none;
+    color: blue;
 }
 .icons a{
     color: black;
