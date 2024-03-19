@@ -1,32 +1,53 @@
+
+
 let menuBtn = document.getElementById("menu-icon");
 let menu = document.querySelector('.ul');
 let vegetablesContainer = document.getElementById("vegetablesContainer");
 let fruitsContainer = document.getElementById("fruitsContainer");
 let juicesContainer = document.getElementById("juicesContainer");
 let cerealsContainer = document.getElementById("cerealsContainer");
+let arrowUp = document.getElementById("arrowBtn");
 
 let MAX_VEG_CARDS_TO_DISPLAY = 8;
 let MAX_FRUIT_CARDS_TO_DISPLAY = 8;
 let MAX_JUICE_CARDS_TO_DISPLAY = 8;
 let MAX_CEREAL_CARDS_TO_DISPLAY = 8;
 
-fetch('http://localhost:3000/getProducts')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json(); 
-  })
-  .then(data => {
-    displayVegetables(data.vegetables) 
-    displayFruits(data.fruits) 
-    displayJuices(data.juices) 
-    displayCereals(data.cereals) 
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  })
+let vegetablesArray = [];
+let fruitsArray = [];
+let juicesArray = [];
+let cerealsArray = [];
 
+async function fetchProductsDetails(){
+  try {
+    let response = await fetch('http://localhost:3000/getProducts');
+    if(response.ok){
+        let data = await response.json();
+        for (let item of data){
+          if(item.category === "Vegetables"){
+            vegetablesArray.push(item)
+          }else if(item.category === "Fruits"){
+            fruitsArray.push(item)
+          }else if(item.category === "Juices"){
+            juicesArray.push(item)
+          }else if(item.category === "Cereals"){
+            cerealsArray.push(item)
+          }
+        }
+      
+        await displayVegetables(vegetablesArray);
+        await displayFruits(fruitsArray);
+        await displayJuices(juicesArray);
+        await displayCereals(cerealsArray); 
+    }
+    else{
+      throw new Error('Failed to fetch products.')
+    }
+  } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+  }
+}
+fetchProductsDetails();
 
 menuBtn.addEventListener("click", ()=>{
   menuBtn.classList.toggle("fa-bars")
@@ -35,7 +56,6 @@ menuBtn.addEventListener("click", ()=>{
 });
 //scroll
 const categoryCards = document.querySelectorAll(".c-inner");
-
 categoryCards.forEach((card) => {
     card.addEventListener("click", (event) => {
         const targetContainerId = event.currentTarget.dataset.target;
@@ -45,8 +65,6 @@ categoryCards.forEach((card) => {
         }
     });
 });
-
-
 function displayVegetables(vegetablesArray){
   for (let i = 0; i < vegetablesArray.length && i < MAX_VEG_CARDS_TO_DISPLAY; i++) {
     createCard(vegetablesArray[i], vegetablesContainer);
@@ -110,6 +128,10 @@ function createCard(item, parentContainer){
   div.classList.add("op-product");
   div.id = item.id;
   parentContainer.appendChild(div)
+  
+  div.addEventListener("click", ()=>{
+    window.location.href = `/showSingleProductPage/${item.id}`;
+  });
 
   let image = document.createElement("img");
   image.classList.add("op-product-image");
@@ -125,6 +147,7 @@ function createCard(item, parentContainer){
   nameEl.classList.add("op-product-name");
   nameEl.textContent = item.name;
   div.appendChild(nameEl);
+  
 
   let priceEl = document.createElement("p");
   priceEl.classList.add("op-product-price");
@@ -167,33 +190,37 @@ function createCard(item, parentContainer){
   let icon3 = document.createElement("i");
   icon3.classList.add("fa-solid", "fa-heart");
   iconEl3.appendChild(icon3)
+
 };
+// function handleProductContainerClick(event, containerId) {
+//   if (event.target.id !== containerId) {
+//       const id = event.target.closest(".op-product").id;
+//       if (id !== undefined) {
 
-function handleProductContainerClick(event, containerId) {
-  if (event.target.id !== containerId) {
-      const id = event.target.closest(".op-product").id;
-      if (id !== undefined) {
-          navigateToSingleProductPage(id);
-      }
-  }
-}
-vegetablesContainer.addEventListener("click", (event) => {
-  handleProductContainerClick(event, "vegetablesContainer");
+//           navigateToSingleProductPage(id);
+//       }
+//   }
+// }
+// vegetablesContainer.addEventListener("click", (event) => {
+//   handleProductContainerClick(event, "vegetablesContainer");
+// });
+// fruitsContainer.addEventListener("click", (event) => {
+//   handleProductContainerClick(event, "fruitsContainer");
+// });
+// juicesContainer.addEventListener("click", (event) => {
+//   handleProductContainerClick(event, "juicesContainer");
+// });
+// cerealsContainer.addEventListener("click", (event) => {
+//   handleProductContainerClick(event, "cerealsContainer");
+// });
+window.addEventListener("scroll", function(){
+  arrowUp.style.opacity = (window.scrollY > 20) ? 1 : 0;
 });
-fruitsContainer.addEventListener("click", (event) => {
-  handleProductContainerClick(event, "fruitsContainer");
+arrowUp.addEventListener("click", function(){
+  window.scrollTo({
+    top:0,
+    behavior : "smooth"
+  });
 });
-juicesContainer.addEventListener("click", (event) => {
-  handleProductContainerClick(event, "juicesContainer");
-});
-cerealsContainer.addEventListener("click", (event) => {
-  handleProductContainerClick(event, "cerealsContainer");
-});
-function navigateToSingleProductPage(productId) {
-  // Construct the URL of the single product page with the product ID as a query parameter
-  const singleProductPageUrl = `showSingleProductPage?id=${productId}`;
 
-  // Navigate to the single product page
-  window.location.href = singleProductPageUrl;
-}
 

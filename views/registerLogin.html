@@ -11,8 +11,8 @@
       crossorigin="anonymous"
     ></script>
     <title>Veggie Bazaar | Login/Register</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="register-login.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/registerLogin.css">
   </head>
   <body loading="lazy">
     <header class="header" id="header">
@@ -21,46 +21,71 @@
             <div class="btn-and-categorys">
                 <i id="menu-icon" class="fa-solid fa-bars menu-btn"></i>
             <ul class="ul">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#ourProducts">Shop</a></li>
+                <li><a href="#index.html#ourProducts">Shop</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a id="login" href="#">Login</a></li>
+                <li><a id="login" href="/showRegistrationLoginPage">Login</a></li>
             </ul>
             </div>
         </nav>
     </header>
     <section class="register-section" id="registerSection">
-        <form id="registerForm" class="registration-form">
+        <div  class="registration-container" >
             <div class="registration-image-container">
-                <img class="registration-image" src="../public/images/registration1.jpg" alt="registration-image" onerror="onRegistrationImageError()" loading="lazy">
+                <img class="registration-image" src="/images/registration1.jpg" alt="registration-image" onerror="onRegistrationImageError()" loading="lazy">
             </div>
-            <div class="registration-container">
-                <h2>Register</h2>
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="Enter your full name">
+            <form class="registration-form" id="registerForm">
+                <h2>Registration</h2>
+                <label for="fullName" class="label">Full Name</label>
+                <input type="text" class="input-field" id="fullName" placeholder="Enter your full name" required>
 
-                <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter your email address">
+                <label for="email"  class="label">Email</label>
+                <input type="text"  class="input-field"  id="email" placeholder="Enter your email address"  required>
 
-                <label for="password">Password</label>
-                <input type="text" id="password"  placeholder="Enter your password"  />
+                <label for="password" class="label">Password</label>
+                <input type="text" class="input-field"  id="password"  placeholder="Enter your password"  required />
 
-                <label for="conformPassword">Conform Password</label>
-                <input type="password" id="conformPassword" placeholder="Conform your password">
-                <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
+                <label for="conformPassword" class="label">Conform Password</label>
+                <div>
+                    <input type="password" class="input-field"  id="conformPassword" placeholder="Conform your password"  required>
+                    <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
+                </div>
                 
-                <label for="mobile">Mobile Number</label>
-                <input type="text" id="mobile" placeholder="Enter your mobile number">
+                <label for="mobile" class="label">Mobile Number</label>
+                <input type="text" class="input-field"  id="mobile" placeholder="Enter your mobile number"  required>
                 
-                <button type="submit" id="registerButton">Register</button>
-            </div>
+                <div>
+                    <button type="submit" id="registerButton">Register</button>
+                    <a href="#">Have an account LOGIN</a>
+                </div>
+            </form>
             
-        </form>
+        </div>
     </section>
-    <section class="login-section" id="loginSection"></section>
+    <section class="login-section" id="loginSection">
+        <div  class="login-container" >
+            <div class="login-image-container">
+                <img class="login-image" src="/images/registration2.jpg" alt="registration-image" onerror="onRegistrationImageError()" loading="lazy">
+            </div>
+            <form class="login-form" id="loginForm">
+                <h2>Login</h2>
+                <label for="email" class="label">Email</label>
+                <input type="text"  class="input-field" id="loginEmail" placeholder="Enter your email address"  required>
 
+                <label for="password" class="label">Password</label>
+                <input type="text" class="input-field"  id="loginPassword"  placeholder="Enter your password"  required />
+                <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
 
+                <div>
+                    <button type="submit" id="loginButton">Login</button>
+                    <a href="#">Create new account?</a>
+                </div>
+            </form>
+            
+        </div>
+
+    </section>
     <section class="footer-section">
         <div class="footer-all-cards">
           <div class="vegefoods-icons-section">
@@ -78,9 +103,9 @@
           <div class="menu-card">
             <h5>Menu</h5>
             <ul class="menu">
-              <li><a href="#">Shop</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Journal</a></li>
+              <li><a href="index.html#ourProducts">Shop</a></li>
               <li><a href="#">Contact Us</a></li>
             </ul>
         </div>
@@ -107,7 +132,7 @@
           <p class="copyright">Copyright ©2024 All rights reserved | This template is made with <span>&#9829; </span>by <a href="#">Mahesh</a></p>
       </section>
 
-    <script src="register-login.js"></script>
+    <script src="/js/registerLogin.js"></script>
   </body>
     
         

@@ -1,6 +1,12 @@
-import { db,  __dirname, path} from '../index.js'; 
+import { db} from '../index.js'; 
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import bcrypt from 'bcrypt';
+
 const router = express.Router();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename)
 
 async function authenticateUser(req, res, next) {
     const { email, password } = req.body;
@@ -19,20 +25,18 @@ async function authenticateUser(req, res, next) {
         res.status(500).send('Internal Server Error');
     }
 }
-
 async function isUser(email){
     let isUserRegisteredQuery = `SELECT * FROM users
                 WHERE email LIKE "${email}" `;
     let isUserRegistered = await db.get(isUserRegisteredQuery);
     return isUserRegistered ? true : false ;
 };
-
 router.get('/', (req, res)=>{
     try{
-        let filePath = path.join(__dirname, "/veggiebazaar", "../views", "index.html");
+        let filePath = path.join(__dirname,  "..", "/views", "index.html");
         res.sendFile(filePath);
     }catch(error){
-        res.status(500).send('Internal Server Error');
+        res.status(500).send(`Internal Server Error : ${error.message}`);
     }
     
 });
@@ -44,7 +48,6 @@ router.get('/getProducts', async (req, res)=>{
     } catch (error) {
         res.status(500).send(`Internal Server Error : ${error.message}`);
     }
-    
 });
 router.get('/cart', async (req, res) => {
     try {
@@ -185,7 +188,6 @@ router.post('/addProductToCart', async (req, res)=>{
         
     }
 });
-
 router.delete('/deleteProductFromCart/:product_id&:email', async (req, res)=>{
     let {email, product_id } = req.params;
     console.log(req.params);
@@ -257,18 +259,34 @@ router.post('/addProductsIntoProductsTable', async (req, res)=>{
     }
     
 });
-router.get('/showSingleProductPage?id=${productId}', async (req, res)=>{
-    let {productId} = req.params;
-    try {
-        let checkProductExistQuery = `  SELECT * FROM products;`
-        let product = await db.get(checkProductExistQuery);
-        if (product !== undefined){
-            // show page complete ------------------------------
-        }
-    } catch (error) {
-        // -----------------------------------------
+router.get('/showSingleProductPage/:productId',  (req, res)=>{
+    
+    try{
+        let filePath = path.join(__dirname,  "../views", "singleProduct.html");
+        res.sendFile(filePath);
+    }catch(error){
+        res.status(500).send(`Internal Server Error :${error.message}`);
     }
 });
-
+router.get('/getSingleProductDetails/:productId', async (req, res)=>{
+    let {productId} = req.params;
+    try {
+        let getSingleProductDetailsQuery = 
+        `SELECT * FROM products
+        WHERE id = ${productId} ;`;
+        let productDetails = await db.get(getSingleProductDetailsQuery);
+        res.json(productDetails);
+    } catch (error) {
+        res.status(500).send(`Internal Server Error : ${error.message}`);
+    }
+});
+router.get('/showRegistrationLoginPage',  (req, res)=>{
+    try{
+        let filePath = path.join(__dirname,  "../views", "registerLogin.html");
+        res.sendFile(filePath);
+    }catch(error){
+        res.status(500).send(`Internal Server Error :${error.message}`);
+    }
+});
 
 export {router};
