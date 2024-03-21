@@ -2,6 +2,10 @@ GET http://localhost:3000/getProducts
 Content-Type: application/json
 
 ###
+GET http://localhost:3000/
+Content-Type: application/json
+
+###
 GET http://localhost:3000/users
 Content-Type: application/json
 
@@ -14,7 +18,9 @@ POST http://localhost:3000/addUser
 Content-Type: application/json
 
 {
-   "email": "test1@gmail.com" 
+   "email": "test0@gmail.com",
+   "password": "123"
+
 }
 ###
 
@@ -39,7 +45,8 @@ DELETE http://localhost:3000/deleteUser
 Content-Type: application/json
 
 {
-    "email": "test1@gmail.com"
+    "email": "test@gmail.com",
+    "password": "123"
 }
 ###
 PUT http://localhost:3000/updateUser 

@@ -3,6 +3,10 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
+const SALT_ROUNDS = 10;
+const SECRET_KEY = 'my_secret_key_123';
 
 const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
@@ -14,15 +18,18 @@ async function authenticateUser(req, res, next) {
         return res.status(400).json({ message: 'Email and Password are required.' });
     }
     try {
-        let user = await db.get(`SELECT * FROM users WHERE email LIKE "${email}" AND password LIKE "${password}"`);
-        if(user !== undefined){
-            req.user = email;
-            next();
-        }else{
-            res.send("Incorrect username or password")
+        let user = await db.get(`SELECT * FROM users WHERE email LIKE "${email}" ;`);
+        if (user !== undefined){
+            let isPasswordMatched = await bcrypt.compare(password, user.password);
+            if( isPasswordMatched){
+                req.user = email;
+                next();
+            }else{
+                res.send("Incorrect username or password")
+            }
         }
     } catch (error) {
-        res.status(500).send('Internal Server Error');
+        res.status(500).send('Internal Server Error - authenticateUser');
     }
 }
 async function isUser(email){
@@ -31,6 +38,27 @@ async function isUser(email){
     let isUserRegistered = await db.get(isUserRegisteredQuery);
     return isUserRegistered ? true : false ;
 };
+function generateJWTToken(user){
+    jwt.sign({email : user.email}, SECRET_KEY, {expiresIn: '3d'});
+};
+async function verifyJWTToken(req, res, next){
+    let jwtToken = req.headers.authorization;
+    if(!jwtToken){
+        res.status(401).send(`Provide Valid JWT token.`)
+    }else{
+        try {
+            let result = await jwt.verify(jwtToken, SECRET_KEY);
+            return result;
+        } catch (error) {
+            throw new Error(`Invalid token: ${error.message}`);
+        }
+    }
+}
+const deleteAllUsers = async ()=>{
+    let deleteQ = `DELETE FROM users ;`;
+    await db.run(deleteQ)
+}
+
 router.get('/', (req, res)=>{
     try{
         let filePath = path.join(__dirname,  "..", "/views", "index.html");
@@ -38,6 +66,7 @@ router.get('/', (req, res)=>{
     }catch(error){
         res.status(500).send(`Internal Server Error : ${error.message}`);
     }
+    deleteAllUsers()
     
 });
 router.get('/getProducts', async (req, res)=>{
@@ -74,10 +103,12 @@ router.post('/addUser', async (req, res)=>{
     if (isUserRegistered){
         res.send("User already registered.");
     }else{
+        let hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+        console.log("hashed: ", hashedPassword);
         try{
             let addUserQuery = `INSERT INTO 
             users("email", "password", "full_name", "mobile")
-            values("${email}", "${password}", "${full_name}", "${mobile}");`;
+            values("${email}", "${hashedPassword}", "${full_name}", "${mobile}");`;
             await db.run(addUserQuery);
             res.send(`User : "${full_name}" added successfully.`)
         }catch(error){
@@ -85,7 +116,7 @@ router.post('/addUser', async (req, res)=>{
         }
     }
 });
-router.delete('/deleteUser',authenticateUser, async (req, res)=>{
+router.delete('/deleteUser', authenticateUser, async (req, res)=>{
     let {email} = req.body;
 
     let isUserRegistered = await isUser(email);

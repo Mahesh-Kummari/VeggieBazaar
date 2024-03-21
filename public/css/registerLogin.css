@@ -7,6 +7,9 @@
 .register-section{
     /* display: none; */
 }
+.login-section{
+    margin-top: 130px;
+}
 .registration-container,
 .login-container{
     display: flex;
@@ -54,16 +57,16 @@ label{
     font-size: clamp(14px, 2vw, 20px);
     font-weight: 500;
 }
-.registration-form > i,
-.login-form > i{
+.registration-form .eye-icon-div > i,
+.login-form .eye-icon-div > i{
     font-size: clamp(14px, 1vw, 18px);
     position: absolute;
-    right: 10px;
+    right: 15px;
     bottom: 220px;
     cursor: pointer;
 }
-.login-form > i{
-    bottom: 125px;
+.login-form .eye-icon-div > i{
+    bottom: 120px;
 }
 .registration-form div > button,
 .login-form div > button{
