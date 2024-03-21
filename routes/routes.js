@@ -2,11 +2,11 @@ import { db} from '../index.js';
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import bcrypt from 'bcrypt';
 
 const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
-// router.use(express.static(path.join(__dirname, 'public')));
 
 async function authenticateUser(req, res, next) {
     const { email, password } = req.body;

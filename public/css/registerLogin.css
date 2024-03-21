@@ -39,8 +39,8 @@
     color: #82ae46;
     margin-top: 30px;
 }
-.registration-form > input,
-.login-form > input{
+
+.input-field{
     padding: 8px 10px;
     width: 350px;
     font-size: clamp(12px, 1.5vw, 18px);
@@ -48,8 +48,8 @@
     border: 1px solid #82ae46;
     outline: none;
 }
-.registration-form > label,
-.login-form > label{
+
+label{
     margin-top: 15px;
     font-size: clamp(14px, 2vw, 20px);
     font-weight: 500;
@@ -65,20 +65,20 @@
 .login-form > i{
     bottom: 125px;
 }
-.registration-form > button,
-.login-form > button{
+.registration-form div > button,
+.login-form div > button{
     padding: 10px;
     border-radius: 25px;
     width: 150px;
-    margin: 30px 30px 30px 0;
+    margin: 30px 15px 30px 0;
     color: white;
     background-color: black;
     outline: none;
     border: none;
     font-size: clamp(16px, 2vw, 20px);
 }
-.registration-form > button:hover,
-.registration-form > button:hover{
+.registration-form div  > button:hover,
+.registration-form div > button:hover{
     background-color:  #82ae46;
 }
 @media screen and (max-width:768px) {
