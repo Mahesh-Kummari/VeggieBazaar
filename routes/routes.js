@@ -13,23 +13,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
 
 async function authenticateUser(req, res, next) {
-    const { email, password } = req.body;
-    if (!email || !password) {
-        return res.status(400).json({ message: 'Email and Password are required.' });
-    }
+    const jwtToken = req.headers['authorization'].split(" ")[1]; // only taking token from " BEARER 'token' "
     try {
-        let user = await db.get(`SELECT * FROM users WHERE email LIKE "${email}" ;`);
-        if (user !== undefined){
-            let isPasswordMatched = await bcrypt.compare(password, user.password);
-            if( isPasswordMatched){
-                req.user = email;
-                next();
-            }else{
-                res.send("Incorrect username or password")
-            }
-        }
+       if (!jwtToken) {
+			return res.status(403).json({ message: "Token is required" });
+		}
+        // verifying jwt token
+       let decoded = jwt.verify(jwtToken, SECRET_KEY)
+        req.username = decoded.username;
+        req.email = decoded.email
+		next();
     } catch (error) {
-        res.status(500).send('Internal Server Error - authenticateUser');
+        if(error.name === "JsonWebTokenError"){
+            return res.status(401).json({ message: "Invalid token" });
+        }
+        res.status(500).send({message:'Internal Server Error - authenticateUser'});
     }
 }
 async function isUser(email){
@@ -38,35 +36,47 @@ async function isUser(email){
     let isUserRegistered = await db.get(isUserRegisteredQuery);
     return isUserRegistered ? true : false ;
 };
-function generateJWTToken(user){
-    jwt.sign({email : user.email}, SECRET_KEY, {expiresIn: '3d'});
-};
-async function verifyJWTToken(req, res, next){
-    let jwtToken = req.headers.authorization;
-    if(!jwtToken){
-        res.status(401).send(`Provide Valid JWT token.`)
-    }else{
-        try {
-            let result = await jwt.verify(jwtToken, SECRET_KEY);
-            return result;
-        } catch (error) {
-            throw new Error(`Invalid token: ${error.message}`);
-        }
-    }
-}
+
+
 const deleteAllUsers = async ()=>{
     let deleteQ = `DELETE FROM users ;`;
     await db.run(deleteQ)
 }
 
+
+router.post('/login',async (req, res)=>{
+
+     const { email, password } = req.body;
+			if (!email || !password) {
+				return res.status(400).json({ message: "Email and Password are required." });
+			}
+			try {
+				let user = await db.get(`SELECT * FROM users WHERE email LIKE "${email}" ;`);
+				if (user) {
+					let isPasswordMatched = await bcrypt.compare(password, user.password);
+					if (isPasswordMatched) {
+                        // generating JWT Token
+                        let payload = {username:user.full_name, email:user.email}
+						const jwtToken = jwt.sign(payload, SECRET_KEY, { expiresIn: "2d" });
+                        
+                        res.json({token:jwtToken,message:"login Successful"})
+					} else {
+						res.send({message: "Password Incorrect"});
+					}
+				}
+			} catch (error) {
+				res
+					.status(500)
+					.send({ message: "Internal Server Error - login" });
+			}
+})
 router.get('/', (req, res)=>{
     try{
         let filePath = path.join(__dirname,  "..", "/views", "index.html");
         res.sendFile(filePath);
     }catch(error){
-        res.status(500).send(`Internal Server Error : ${error.message}`);
+        res.status(500).send({message:`Internal Server Error ${error.message} - authenticateUser`} );
     }
-    deleteAllUsers()
     
 });
 router.get('/getProducts', async (req, res)=>{
@@ -75,7 +85,7 @@ router.get('/getProducts', async (req, res)=>{
         let productsJson = await db.all(getProductsQuery);
         res.send(productsJson);
     } catch (error) {
-        res.status(500).send(`Internal Server Error : ${error.message}`);
+        res.status(500).send({message: `Internal Server Error ${error.message} - getproducts`});
     }
 });
 router.get('/cart', async (req, res) => {
@@ -89,19 +99,19 @@ router.get('/cart', async (req, res) => {
 });
 router.get('/users', async (req, res) => {
     try {
-        const data = await db.all('SELECT * FROM users');
+        const data = await db.all('SELECT * FROM users;');
         res.json(data);
     } catch (error) {
         console.error(`Database query error: ${error.message}`);
-        res.status(500).send('Internal Server Error');
+        resstatus(500).send({message: `Internal Server Error ${error.message}`});
     }
 });
 router.post('/addUser', async (req, res)=>{
     let {email, password, full_name , mobile} = req.body;
-
     let isUserRegistered = await isUser(email);
+    console.log(isUserRegistered);
     if (isUserRegistered){
-        res.send("User already registered.");
+        res.status(409).send({message:"User already registered."});
     }else{
         let hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
         console.log("hashed: ", hashedPassword);
@@ -110,9 +120,9 @@ router.post('/addUser', async (req, res)=>{
             users("email", "password", "full_name", "mobile")
             values("${email}", "${hashedPassword}", "${full_name}", "${mobile}");`;
             await db.run(addUserQuery);
-            res.send(`User : "${full_name}" added successfully.`)
+            res.send({message:`"${full_name}" Registered successfully.`})
         }catch(error){
-            res.status(500).send(`Internal server error : ${error.message}`)
+            res.status(500).send({message: `Internal Server Error ${error.message}`});
         }
     }
 });
@@ -121,7 +131,7 @@ router.delete('/deleteUser', authenticateUser, async (req, res)=>{
 
     let isUserRegistered = await isUser(email);
     if (!isUserRegistered){
-        res.send("User does not exist.");
+        res.send({message: `User doest not Exist`});
     }else{
         try{
             let deleteUserQuery = `DELETE FROM  users
@@ -219,7 +229,7 @@ router.post('/addProductToCart', async (req, res)=>{
         
     }
 });
-router.delete('/deleteProductFromCart/:product_id&:email', async (req, res)=>{
+router.delete('/deleteProductFromCart/:product_id', async (req, res)=>{
     let {email, product_id } = req.params;
     console.log(req.params);
 
@@ -290,7 +300,7 @@ router.post('/addProductsIntoProductsTable', async (req, res)=>{
     }
     
 });
-router.get('/showSingleProductPage/:productId',  (req, res)=>{
+router.get('/products/:productId',  (req, res)=>{
     
     try{
         let filePath = path.join(__dirname,  "../views", "singleProduct.html");

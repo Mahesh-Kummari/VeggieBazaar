@@ -130,7 +130,7 @@ function createCard(item, parentContainer){
   parentContainer.appendChild(div)
   
   div.addEventListener("click", ()=>{
-    window.location.href = `/showSingleProductPage/${item.id}`;
+    window.location.href = `/products/${item.id}`;
   });
 
   let image = document.createElement("img");

@@ -19,14 +19,26 @@ Content-Type: application/json
 
 {
    "email": "test0@gmail.com",
-   "password": "123"
+    "password": "12345",
+    "full_name": "mahesh.m",
+    "mobile": "9876543210"
+}
+###
 
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+   "email": "test0@gmail.com",
+    "password": "12345"
 }
 ###
 
 ###
 POST http://localhost:3000/addProductToCart
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1haGVzaC5tIiwiZW1haWwiOiJ0ZXN0MEBnbWFpbC5jb20iLCJpYXQiOjE3MTEwMTQ3MTAsImV4cCI6MTcxMTE4NzUxMH0.qixbz_qJYGZSEJrjWEsjBxR1lEQ8tD4URL6z5xcvqqY
 
 {
     "email": "test@gmail.com",
@@ -41,12 +53,16 @@ Content-Type: application/json
     "email" : "mahesh@gmail.com"
 }
 ###
+
+
 DELETE http://localhost:3000/deleteUser
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1haGVzaC5tIiwiZW1haWwiOiJ0ZXN0MEBnbWFpbC5jb20iLCJpYXQiOjE3MTEwMTYzOTgsImV4cCI6MTcxMTE4OTE5OH0.aSwaPf-e4Hj-k6fqlUsGjK-SWLOKMitoE-h060dyAfw
 
 {
-    "email": "test@gmail.com",
+    "email": "test0@gmail.com",
     "password": "123"
+   
 }
 ###
 PUT http://localhost:3000/updateUser 
