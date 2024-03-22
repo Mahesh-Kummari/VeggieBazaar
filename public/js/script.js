@@ -123,20 +123,20 @@ function addShowMoreButton(parentContainer, productsArr) {
 
   appendShowMoreButton();
 };
+
 function createCard(item, parentContainer){
   let div = document.createElement("div");
   div.classList.add("op-product");
   div.id = item.id;
   parentContainer.appendChild(div)
-  
-  div.addEventListener("click", ()=>{
-    window.location.href = `/products/${item.id}`;
-  });
-
+  div.addEventListener("click", () => {
+		window.location.href = `/products/${item.id}`;
+	});
   let image = document.createElement("img");
   image.classList.add("op-product-image");
   image.setAttribute("loading", "lazy")
-  image.src = item.image;
+  let image_url = item.image.substring(2);
+  image.src = image_url;
   image.alt = item.name;
   image.onerror = function(){
     image.src = "../images/spinach.jpg"
@@ -224,3 +224,11 @@ arrowUp.addEventListener("click", function(){
 });
 
 
+function getToken(){
+  let token = localStorage.getItem('token')
+  if(token !== null){
+    // console.log(token);
+    return token
+  }
+}
+getToken();

@@ -8,6 +8,7 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/users
 Content-Type: application/json
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1haGVzaCBNYWRkaGkiLCJlbWFpbCI6Im1hZGRpbWFoZXNoMTExQGdtYWlsLmNvbSIsImlhdCI6MTcxMTA5MDM4NywiZXhwIjoxNzExMjYzMTg3fQ.ndm4ZZkM5ZWaVlOFJYYVsCywBbaOCyBgFREhL0J3kBc
 
 ###
 GET http://localhost:3000/cart
@@ -18,7 +19,7 @@ POST http://localhost:3000/addUser
 Content-Type: application/json
 
 {
-   "email": "test0@gmail.com",
+   "email": "test1@gmail.com",
     "password": "12345",
     "full_name": "mahesh.m",
     "mobile": "9876543210"
@@ -93,4 +94,8 @@ Content-Type: application/json
 {
     
 }
+###
+GET http://localhost:3000/search?q=tomato
+Content-Type: application/json
+
 ###

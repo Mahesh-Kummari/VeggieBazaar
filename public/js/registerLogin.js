@@ -69,7 +69,7 @@ registerForm.addEventListener("submit", (e)=>{
 });
 
 async function checkAndRegisterUser(data){
-    let url = 'http://localhost:3000/addUser'
+    let url = "http://localhost:3000/addUser";
     let options = {
 			method: "POST",
 			headers: {
@@ -83,8 +83,6 @@ async function checkAndRegisterUser(data){
 		}
        
 }
-
-
 
 const httpRequest = async (url, options) => {
     try {
@@ -130,3 +128,4 @@ async function login(data){
             showMessage(`${responseData.message}`, "success");
 		}
 }
+export default httpRequest

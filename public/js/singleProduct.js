@@ -88,7 +88,10 @@ function displaySingleItem(product){
     actualPrice.textContent = "₹ "+ product.discounted_price;
     price.textContent = "₹ "+ product.price ;
     description.textContent = product.description;
-    productImage.src = product.image;
+    let image_url = product.image.substring(2)
+    productImage.src = image_url;
+    console.log(product.image);
+    console.log(image_url);
     productImage.onerror = () =>{
         productImage.src = "/images/product-default-image.jpeg";
     }
