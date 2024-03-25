@@ -85,7 +85,7 @@ router.get("/", (req, res) => {
 		res
 			.status(500)
 			.send({
-				message: `Internal Server Error ${error.message} - authenticateUser`,
+				message: `Internal Server Error ${error.message} - get`,
 			});
 	}
 });
@@ -124,7 +124,7 @@ router.get("/cart", async (req, res) => {
 		res.status(500).send("Internal Server Error");
 	}
 });
-router.get("/users", authenticateUser, async (req, res) => {
+router.get("/users", async (req, res) => {
 	try {
 		const data = await db.all("SELECT * FROM users;");
 		res.json(data);

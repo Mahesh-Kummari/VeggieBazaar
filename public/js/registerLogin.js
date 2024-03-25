@@ -13,7 +13,7 @@ let passwordEl = document.getElementById("password");
 let loginPasswordEl = document.getElementById("loginPassword");
 let conformPasswordRegisterEl = document.getElementById("conformPasswordRegister");
 let mobileEl = document.getElementById("mobile");
-
+console.log("js loades....");
 
 function showMessage(message, messageType) {
 	const messageContainer = document.getElementById("messageContainer");
@@ -55,6 +55,7 @@ registerForm.addEventListener("submit", (e)=>{
     let email = emailEl.value.trim() ;
     let password = passwordEl.value.trim() ;
     let mobile = mobileEl.value.trim() ;
+    let conformPassword = conformPasswordRegisterEl.value.trim();
     if (password === conformPassword){
         let userObj = {
             full_name : fullName,
@@ -92,7 +93,7 @@ const httpRequest = async (url, options) => {
             throw new Error(`${error.message}`);
         }
         let data = await response.json();
-        // console.log("http:",data)
+        console.log("http:",data)
         return data
     } catch (error) {
         showMessage(`${error.message}`, "error")
@@ -128,4 +129,4 @@ async function login(data){
             showMessage(`${responseData.message}`, "success");
 		}
 }
-export default httpRequest
+// export default httpRequest
