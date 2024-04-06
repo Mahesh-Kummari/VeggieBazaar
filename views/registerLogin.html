@@ -30,7 +30,9 @@
             </div>
         </nav>
     </header>
+    
     <section class="register-section" id="registerSection">
+        <div id="messageContainer"></div>
         <div  class="registration-container" >
             <div class="registration-image-container">
                 <img class="registration-image" src="/images/registration1.jpg" alt="registration-image" onerror="onRegistrationImageError()" loading="lazy">
@@ -46,10 +48,10 @@
                 <label for="password" class="label">Password</label>
                 <input type="text" class="input-field"  id="password"  placeholder="Enter your password"  required />
 
-                <label for="conformPassword" class="label">Conform Password</label>
-                <div>
-                    <input type="password" class="input-field"  id="conformPassword" placeholder="Conform your password"  required>
-                    <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
+                <label for="conformPasswordRegister" class="label">Conform Password</label>
+                <div class="eye-icon-div">
+                    <input type="password" class="input-field"  id="conformPasswordRegister" placeholder="Conform your password"  required>
+                    <i id="showHidePasswordIconRegister" class="fa-solid fa-eye "></i>
                 </div>
                 
                 <label for="mobile" class="label">Mobile Number</label>
@@ -57,7 +59,7 @@
                 
                 <div>
                     <button type="submit" id="registerButton">Register</button>
-                    <a href="#">Have an account LOGIN</a>
+                    <a href="#loginSection">Have an account LOGIN</a>
                 </div>
             </form>
             
@@ -70,16 +72,18 @@
             </div>
             <form class="login-form" id="loginForm">
                 <h2>Login</h2>
-                <label for="email" class="label">Email</label>
+                <label for="loginEmail" class="label">Email</label>
                 <input type="text"  class="input-field" id="loginEmail" placeholder="Enter your email address"  required>
 
-                <label for="password" class="label">Password</label>
-                <input type="text" class="input-field"  id="loginPassword"  placeholder="Enter your password"  required />
-                <i id="showHidePasswordIcon" class="fa-solid fa-eye "></i>
+                <label for="loginPassword" class="label">Password</label>
+                <div class="eye-icon-div">
+                    <input type="password" class="input-field"  id="loginPassword"  placeholder="Enter your password"  required />
+                    <i id="showHidePasswordIconLogin" class="fa-solid fa-eye "></i>
+                </div>
 
                 <div>
                     <button type="submit" id="loginButton">Login</button>
-                    <a href="#">Create new account?</a>
+                    <a href="#registerSection">Create new account?</a>
                 </div>
             </form>
             
