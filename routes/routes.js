@@ -99,6 +99,19 @@ router.get('/search', async (req, res) => {
 		});
 	}
 });
+router.get('/categories/:category', async (req, res) => {
+	const { category } = req.params;
+	console.log(category);
+	try {
+		let getProductsQuery = `SELECT * FROM products WHERE category LIKE "${category}";`;
+		let productsJson = await db.all(getProductsQuery);
+		res.send(productsJson);
+	} catch (error) {
+		res.status(500).send({
+			message: `Internal Server Error ${error.message} - category`,
+		});
+	}
+});
 router.get('/getProducts', async (req, res) => {
 	try {
 		let getProductsQuery = `SELECT * FROM products;`;
