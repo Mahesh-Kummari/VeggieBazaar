@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { data } from '../api-data.mjs';
 
 const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
@@ -333,10 +334,14 @@ router.post('/addProductsIntoProductsTable', async (req, res) => {
 		res.status(500).send(`Internal server error : ${error.message}`);
 	}
 });
-router.get('/products/:productId', (req, res) => {
+router.get('/products/:productId', async (req, res) => {
 	try {
-		let filePath = path.join(__dirname, '../views', 'singleProduct.html');
-		res.sendFile(filePath);
+		let { productId } = req.params;
+
+		let getSingleProductDetailsQuery = `SELECT * FROM products
+        WHERE id = ${productId} ;`;
+		let productDetails = await db.get(getSingleProductDetailsQuery);
+		res.json(productDetails);
 	} catch (error) {
 		res.status(500).send(`Internal Server Error :${error.message}`);
 	}
@@ -359,6 +364,45 @@ router.get('/showRegistrationLoginPage', (req, res) => {
 	} catch (error) {
 		res.status(500).send(`Internal Server Error :${error.message}`);
 	}
+});
+
+/// DONT USE IT BECAUSE PRODUCTS ALREADY ADDED
+router.get('/addProducts', async (req, res) => {
+	// const qe = `DELETE FROM products;`;
+	// await db.run(qe);
+
+	for (let product of data) {
+		let {
+			name,
+			price,
+			discounted_price,
+			description,
+			rating,
+			stock,
+			category,
+			image,
+		} = product;
+
+		let q = `INSERT INTO 
+    products ("name", "price", "discounted_price", "description", "rating", "stock", "category", "image")
+	VALUES ("${name}", ${price}, ${discounted_price}, "${description}", ${rating}, ${stock}, "${category}", "${image}"); `;
+
+		try {
+			await db.run(q);
+			console.log(name, 'added');
+		} catch (error) {
+			res.status(500).send(`Internal server error : ${error.message}`);
+		}
+	}
+
+	res.send('successful');
+
+	// try {
+	// 	await db.run(q);
+	// 	res.send('vegis added to table');
+	// } catch (error) {
+	// 	res.status(500).send(`Internal server error : ${error.message}`);
+	// }
 });
 
 export { router };
