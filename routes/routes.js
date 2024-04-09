@@ -373,6 +373,7 @@ router.get('/addProducts', async (req, res) => {
 
 	for (let product of data) {
 		let {
+			id,
 			name,
 			price,
 			discounted_price,
@@ -384,18 +385,18 @@ router.get('/addProducts', async (req, res) => {
 		} = product;
 
 		let q = `INSERT INTO 
-    products ("name", "price", "discounted_price", "description", "rating", "stock", "category", "image")
-	VALUES ("${name}", ${price}, ${discounted_price}, "${description}", ${rating}, ${stock}, "${category}", "${image}"); `;
+    products ("id","name", "price", "discounted_price", "description", "rating", "stock", "category", "image")
+	VALUES (${id},"${name}", ${price}, ${discounted_price}, "${description}", ${rating}, ${stock}, "${category}", "${image}"); `;
 
 		try {
 			await db.run(q);
-			console.log(name, 'added');
+			console.log(id, name, 'added');
 		} catch (error) {
 			res.status(500).send(`Internal server error : ${error.message}`);
 		}
 	}
 
-	res.send('successful');
+	res.send('delete successful');
 
 	// try {
 	// 	await db.run(q);
